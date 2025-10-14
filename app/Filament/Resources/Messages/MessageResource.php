@@ -26,9 +26,7 @@ class MessageResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedEnvelope;
 
-    protected static ?int $navigationSort = 6;
-
-    protected static string | \UnitEnum | null $navigationGroup = 'Messages';
+    protected static ?int $navigationSort = 8;
 
     public static function form(Schema $schema): Schema
     {
@@ -60,5 +58,10 @@ class MessageResource extends Resource
             'view' => ViewMessage::route('/{record}'),
             'edit' => EditMessage::route('/{record}/edit'),
         ];
+    }
+
+    public static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
     }
 }

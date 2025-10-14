@@ -10,6 +10,8 @@ class JobApplicationController extends Controller
 {
     public function store(Request $request)
     {
+        \Log::info('Job application request received', $request->all());
+        
         $validator = Validator::make($request->all(), [
             'firstName' => 'required|string|max:255',
             'lastName' => 'required|string|max:255',
@@ -27,6 +29,7 @@ class JobApplicationController extends Controller
         ]);
 
         if ($validator->fails()) {
+            \Log::error('Job application validation failed', $validator->errors()->toArray());
             return response()->json([
                 'success' => false,
                 'errors' => $validator->errors()
@@ -49,6 +52,8 @@ class JobApplicationController extends Controller
             'status' => 'pending',
             'is_read' => false,
         ]);
+
+        \Log::info('Job application created successfully', ['id' => $jobApplication->id]);
 
         return response()->json([
             'success' => true,

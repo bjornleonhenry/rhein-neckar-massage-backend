@@ -26,9 +26,7 @@ class JobApplicationResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedUserGroup;
 
-    protected static ?int $navigationSort = 7;
-
-    protected static string | \UnitEnum | null $navigationGroup = 'Messages';
+    protected static ?int $navigationSort = 9;
 
     public static function form(Schema $schema): Schema
     {
@@ -60,5 +58,10 @@ class JobApplicationResource extends Resource
             'view' => ViewJobApplication::route('/{record}'),
             'edit' => EditJobApplication::route('/{record}/edit'),
         ];
+    }
+
+    public static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
     }
 }

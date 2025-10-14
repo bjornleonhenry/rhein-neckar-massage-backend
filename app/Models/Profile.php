@@ -107,7 +107,7 @@ class Profile extends Model
         }
         
         // Include the old image field if it exists and not already in images array
-        if ($this->image && !in_array($this->image, $this->images ?? [])) {
+        if ($this->image && is_array($this->images) && !in_array($this->image, $this->images)) {
             // Check if it's already a full URL
             if (filter_var($this->image, FILTER_VALIDATE_URL)) {
                 $urls[] = $this->image;
