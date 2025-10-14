@@ -1,0 +1,48 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+/* Custom styles for notifications component */
+.fi-topbar-database-notifications-badge {
+    @apply absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-semibold;
+}
+
+.fi-notification-item {
+    @apply p-4 border-b border-gray-200 dark:border-gray-700;
+}
+
+.fi-notification-unread {
+    @apply bg-blue-50 dark:bg-blue-900/20 border-l-4 border-l-blue-500;
+}
+
+.fi-notification-read {
+    @apply bg-gray-50 dark:bg-gray-800;
+}
+
+.fi-notification-title {
+    @apply font-semibold text-gray-900 dark:text-white mb-1;
+}
+
+.fi-notification-message {
+    @apply text-sm text-gray-600 dark:text-gray-300 mb-2;
+}
+
+.fi-notification-date {
+    @apply text-xs text-gray-500 dark:text-gray-400;
+}
+
+.fi-notification-mark-read {
+    @apply text-xs bg-blue-500 hover:bg-blue-600 text-white px-2 py-1 rounded transition-colors;
+}
+
+.fi-notifications-see-more {
+    @apply text-center pt-4;
+}

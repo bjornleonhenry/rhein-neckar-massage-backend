@@ -1,0 +1,36 @@
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Seeder;
+use App\Models\LanguageKey;
+use App\Models\LanguageString;
+
+class MieterinnenSeeder extends Seeder
+{
+    public function run()
+    {
+        $entries = [
+            ['key' => 'mieterinnen.title', 'value_de' => 'Unsere Verführerischen Masseurinnen', 'value_en' => 'Our Seductive Masseuses'],
+            ['key' => 'mieterinnen.description', 'value_de' => 'Entdecken Sie unsere leidenschaftlichen und sinnlichen Göttinnen der Erotik. Jede von ihnen ist eine Meisterin der Verführung, bereit Ihre wildesten Fantasien zu erfüllen und Ihnen unvergessliche Nächte voller Lust zu bereiten.', 'value_en' => 'Discover our passionate and sensual goddesses of erotica. Each is a master of seduction, ready to fulfil your wildest fantasies and provide unforgettable nights of pleasure.'],
+            ['key' => 'mieterinnen.cta.book', 'value_de' => 'Termin buchen', 'value_en' => 'Book appointment'],
+        ];
+
+        foreach ($entries as $entry) {
+            $key = LanguageKey::firstOrCreate(
+                ['key' => $entry['key']],
+                ['type' => 'page', 'is_active' => true]
+            );
+
+            LanguageString::updateOrCreate(
+                ['language_key_id' => $key->id, 'lang' => 'de'],
+                ['string' => $entry['key'], 'value' => $entry['value_de'], 'is_active' => true]
+            );
+
+            LanguageString::firstOrCreate(
+                ['language_key_id' => $key->id, 'lang' => 'en'],
+                ['string' => $entry['key'], 'value' => $entry['value_en'], 'is_active' => false]
+            );
+        }
+    }
+}

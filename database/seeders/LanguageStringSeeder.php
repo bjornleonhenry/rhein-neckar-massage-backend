@@ -1,0 +1,213 @@
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Seeder;
+use App\Models\LanguageString;
+use App\Models\LanguageKey;
+
+class LanguageStringSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
+    {
+        // Complete snapshot of all language strings (as of September 25, 2025)
+        $languageStrings = [
+            // German translations
+            ['lang' => 'de', 'string' => 'button.cancel', 'value' => 'Abbrechen', 'is_active' => 1, 'language_key_id' => 20],
+            ['lang' => 'de', 'string' => 'button.delete', 'value' => 'Löschen', 'is_active' => 1, 'language_key_id' => 22],
+            ['lang' => 'de', 'string' => 'button.edit', 'value' => 'Bearbeiten', 'is_active' => 1, 'language_key_id' => 21],
+            ['lang' => 'de', 'string' => 'button.save', 'value' => 'Speichern', 'is_active' => 1, 'language_key_id' => 19],
+            ['lang' => 'de', 'string' => 'error.validation_failed', 'value' => 'Validierung fehlgeschlagen. Bitte überprüfen Sie Ihre Eingabe.', 'is_active' => 1, 'language_key_id' => 32],
+            ['lang' => 'de', 'string' => 'footer.address', 'value' => 'WurstStraße 45, 64283 Heidenburg', 'is_active' => 1, 'language_key_id' => 16],
+            ['lang' => 'de', 'string' => 'footer.description', 'value' => 'Ihr exklusives Erotik-Massage Studio in Heidenburg. Sinnliche Entspannung in eleganter, diskreter Atmosphäre. Höchste Qualität und absolute Diskretion sind unsere Priorität.', 'is_active' => 1, 'language_key_id' => 17],
+            ['lang' => 'de', 'string' => 'footer.title.line1', 'value' => 'Rhein', 'is_active' => 1, 'language_key_id' => 13],
+            ['lang' => 'de', 'string' => 'footer.title.line2', 'value' => 'Neckar', 'is_active' => 1, 'language_key_id' => 14],
+            ['lang' => 'de', 'string' => 'footer.title.line3', 'value' => 'Massage', 'is_active' => 1, 'language_key_id' => 15],
+            ['lang' => 'de', 'string' => 'hero.cta.book', 'value' => 'Termin vereinbaren', 'is_active' => 1, 'language_key_id' => 38],
+            ['lang' => 'de', 'string' => 'hero.cta.services', 'value' => 'Erotik-Services entdecken', 'is_active' => 1, 'language_key_id' => 39],
+            ['lang' => 'de', 'string' => 'hero.description', 'value' => 'Entdecken Sie sinnliche und leidenschaftliche Massagetechniken in eleganter, diskreter Atmosphäre. Unsere erfahrenen Verführerinnen verwöhnen Sie mit erotischen Behandlungen für ultimative Lust und Ekstase.', 'is_active' => 1, 'language_key_id' => 34],
+            ['lang' => 'de', 'string' => 'hero.feature.discretion', 'value' => 'Verführerische Diskretion', 'is_active' => 1, 'language_key_id' => 41],
+            ['lang' => 'de', 'string' => 'hero.feature.schedule', 'value' => 'Flexible Lust-Termine', 'is_active' => 1, 'language_key_id' => 42],
+            ['lang' => 'de', 'string' => 'hero.feature.technique', 'value' => 'Sinnliche Erotik-Techniken', 'is_active' => 1, 'language_key_id' => 40],
+            ['lang' => 'de', 'string' => 'hero.title', 'value' => 'Rhein', 'is_active' => 1, 'language_key_id' => 35],
+            ['lang' => 'de', 'string' => 'hero.title_accent', 'value' => 'Neckar', 'is_active' => 1, 'language_key_id' => 36],
+            ['lang' => 'de', 'string' => 'hero.title_tail', 'value' => 'Massage Heidelburg', 'is_active' => 1, 'language_key_id' => 37],
+            ['lang' => 'de', 'string' => 'home.description', 'value' => 'Entdecken Sie unsere leidenschaftlichen und sinnlichen Göttinnen der Erotik, die Ihre wildesten Fantasien wahr werden lassen.', 'is_active' => 1, 'language_key_id' => 47],
+            ['lang' => 'de', 'string' => 'home.hero.badge', 'value' => 'Spitzenmäßig Erotik-Massage Gast Studio in Heidenburg 🇩🇪', 'is_active' => 1, 'language_key_id' => 48],
+            ['lang' => 'de', 'string' => 'home.hero.intro', 'value' => 'Willkommen in unserem exklusiven Erotik-Massage Studio in Heidenburg. Wir bieten Ihnen sinnliche und leidenschaftliche Verführungstechniken in eleganter, diskreter Atmosphäre. Unsere erfahrenen Verführerinnen verwöhnen Sie mit erotischen Behandlungen voller Lust.\n\nJede Behandlung wird individuell auf Ihre verborgensten Wünsche und Sehnsüchte abgestimmt. In unseren privaten, sinnlich eingerichteten Lust-Räumen können Sie vollkommen entspannen und Ihre wildesten Fantasien ausleben. Diskretion und höchste erotische Qualität stehen bei uns im Vordergrund.', 'is_active' => 1, 'language_key_id' => 49],
+            ['lang' => 'de', 'string' => 'home.title', 'value' => 'Unsere Verführerischen Masseurinnen', 'is_active' => 1, 'language_key_id' => 46],
+            ['lang' => 'de', 'string' => 'label.email', 'value' => 'E-Mail', 'is_active' => 1, 'language_key_id' => 24],
+            ['lang' => 'de', 'string' => 'label.name', 'value' => 'Name', 'is_active' => 1, 'language_key_id' => 23],
+            ['lang' => 'de', 'string' => 'label.password', 'value' => 'Passwort', 'is_active' => 1, 'language_key_id' => 25],
+            ['lang' => 'de', 'string' => 'message.error_occurred', 'value' => 'Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.', 'is_active' => 1, 'language_key_id' => 31],
+            ['lang' => 'de', 'string' => 'message.success_saved', 'value' => 'Erfolgreich gespeichert!', 'is_active' => 1, 'language_key_id' => 30],
+            ['lang' => 'de', 'string' => 'mieterinnen.cta.book', 'value' => 'Termin buchen', 'is_active' => 1, 'language_key_id' => 45],
+            ['lang' => 'de', 'string' => 'mieterinnen.description', 'value' => 'Entdecken Sie unsere leidenschaftlichen und sinnlichen Göttinnen der Erotik. Jede von ihnen ist eine Meisterin der Verführung, bereit Ihre wildesten Fantasien zu erfüllen und Ihnen unvergessliche Nächte voller Lust zu bereiten.', 'is_active' => 1, 'language_key_id' => 44],
+            ['lang' => 'de', 'string' => 'mieterinnen.title', 'value' => 'Unsere Verführerischen Masseurinnen', 'is_active' => 1, 'language_key_id' => 43],
+            ['lang' => 'de', 'string' => 'nav.ambiente', 'value' => 'Ambiente', 'is_active' => 1, 'language_key_id' => 10],
+            ['lang' => 'de', 'string' => 'nav.angebot', 'value' => 'Angebot', 'is_active' => 1, 'language_key_id' => 9],
+            ['lang' => 'de', 'string' => 'nav.gaestebuch', 'value' => 'Gästebuch', 'is_active' => 1, 'language_key_id' => 11],
+            ['lang' => 'de', 'string' => 'nav.home', 'value' => 'Home', 'is_active' => 1, 'language_key_id' => 7],
+            ['lang' => 'de', 'string' => 'nav.kontakt', 'value' => 'Kontakt', 'is_active' => 1, 'language_key_id' => 12],
+            ['lang' => 'de', 'string' => 'nav.mieterinnen', 'value' => 'Mieterinnen', 'is_active' => 1, 'language_key_id' => 8],
+            ['lang' => 'de', 'string' => 'placeholder.enter_name', 'value' => 'Geben Sie Ihren Namen ein', 'is_active' => 1, 'language_key_id' => 29],
+            ['lang' => 'de', 'string' => 'placeholder.search', 'value' => 'Suchen...', 'is_active' => 1, 'language_key_id' => 28],
+            ['lang' => 'de', 'string' => 'success.record_created', 'value' => 'Datensatz erfolgreich erstellt!', 'is_active' => 1, 'language_key_id' => 33],
+            ['lang' => 'de', 'string' => 'title.dashboard', 'value' => 'Dashboard', 'is_active' => 1, 'language_key_id' => 26],
+            ['lang' => 'de', 'string' => 'title.users', 'value' => 'Benutzer', 'is_active' => 1, 'language_key_id' => 27],
+            ['lang' => 'de', 'string' => 'welcome_message', 'value' => 'Willkommen in unserer Anwendung!', 'is_active' => 1, 'language_key_id' => 18],
+            // Angebots page German
+            ['lang' => 'de', 'string' => 'angebot.title', 'value' => 'Unsere Leistungen', 'is_active' => 1],
+            ['lang' => 'de', 'string' => 'angebot.description', 'value' => 'Tauchen Sie ein in unsere Welt der sinnlichen Verführung und erotischen Lust. Entdecken Sie unser vielfältiges Angebot an leidenschaftlichen Massagen und exklusiven Erotik-Services. Jede Behandlung wird individuell auf Ihre verborgensten Wünsche und Sehnsüchte abgestimmt.', 'is_active' => 1],
+            ['lang' => 'de', 'string' => 'angebot.button.add_new', 'value' => 'Neues Angebot hinzufügen', 'is_active' => 1],
+            ['lang' => 'de', 'string' => 'angebot.additional_services.title', 'value' => 'Erotische Zusatz-Services', 'is_active' => 1],
+            ['lang' => 'de', 'string' => 'angebot.additional_services.1', 'value' => 'Outcall Erotik-Service (Hotelbesuche)', 'is_active' => 1],
+            ['lang' => 'de', 'string' => 'angebot.additional_services.2', 'value' => 'Overnight Lust-Begleitung', 'is_active' => 1],
+            ['lang' => 'de', 'string' => 'angebot.additional_services.3', 'value' => 'Verführerische Dinner Dates', 'is_active' => 1],
+            ['lang' => 'de', 'string' => 'angebot.additional_services.4', 'value' => 'Erotische Wellness Packages', 'is_active' => 1],
+            ['lang' => 'de', 'string' => 'angebot.additional_services.5', 'value' => 'Lust-Geschenkgutscheine', 'is_active' => 1],
+            ['lang' => 'de', 'string' => 'angebot.additional_services.6', 'value' => 'Diskrete Firmen-Events mit Erotik', 'is_active' => 1],
+            ['lang' => 'de', 'string' => 'angebot.pricing.title', 'value' => 'Preise & Buchung', 'is_active' => 1],
+            ['lang' => 'de', 'string' => 'angebot.pricing.description', 'value' => 'Alle Preise verstehen sich als Grundpreise für unsere erotischen Verführungen. Spezielle Wünsche, Fetische und besondere Extras werden individuell berechnet. Für eine persönliche und diskrete Beratung Ihrer verborgensten Sehnsüchte kontaktieren Sie uns.', 'is_active' => 1],
+            ['lang' => 'de', 'string' => 'angebot.pricing.deposit.title', 'value' => 'Vorauszahlung', 'is_active' => 1],
+            ['lang' => 'de', 'string' => 'angebot.pricing.deposit.description', 'value' => '50% bei Buchung', 'is_active' => 1],
+            ['lang' => 'de', 'string' => 'angebot.pricing.cancellation.title', 'value' => 'Stornierung', 'is_active' => 1],
+            ['lang' => 'de', 'string' => 'angebot.pricing.cancellation.description', 'value' => '24h vorher kostenfrei', 'is_active' => 1],
+            ['lang' => 'de', 'string' => 'angebot.pricing.discretion.title', 'value' => 'Diskretion', 'is_active' => 1],
+            ['lang' => 'de', 'string' => 'angebot.pricing.discretion.description', 'value' => '100% garantiert', 'is_active' => 1],
+            ['lang' => 'de', 'string' => 'angebot.edit.title', 'value' => 'Angebot bearbeiten', 'is_active' => 1],
+            ['lang' => 'de', 'string' => 'angebot.create.title', 'value' => 'Neues Angebot erstellen', 'is_active' => 1],
+            ['lang' => 'de', 'string' => 'angebot.form.title', 'value' => 'Titel', 'is_active' => 1],
+            ['lang' => 'de', 'string' => 'angebot.form.category', 'value' => 'Kategorie', 'is_active' => 1],
+            ['lang' => 'de', 'string' => 'angebot.form.description', 'value' => 'Beschreibung', 'is_active' => 1],
+            ['lang' => 'de', 'string' => 'angebot.form.price', 'value' => 'Preis (€)', 'is_active' => 1],
+            ['lang' => 'de', 'string' => 'angebot.form.duration', 'value' => 'Dauer (Minuten)', 'is_active' => 1],
+            ['lang' => 'de', 'string' => 'angebot.form.image', 'value' => 'Bild URL (optional)', 'is_active' => 1],
+            ['lang' => 'de', 'string' => 'angebot.form.active', 'value' => 'Aktiv', 'is_active' => 1],
+            ['lang' => 'de', 'string' => 'angebot.form.services', 'value' => 'Inkludierte Services', 'is_active' => 1],
+            ['lang' => 'de', 'string' => 'angebot.popular', 'value' => 'Beliebt', 'is_active' => 1],
+            ['lang' => 'de', 'string' => 'angebot.duration', 'value' => 'Min', 'is_active' => 1],
+            ['lang' => 'de', 'string' => 'angebot.book_now', 'value' => 'Jetzt buchen', 'is_active' => 1],
+            ['lang' => 'de', 'string' => 'angebot.no_services', 'value' => 'Keine Angebote verfügbar. Fügen Sie ein neues Angebot hinzu.', 'is_active' => 1],
+            ['lang' => 'de', 'string' => 'angebot.delete.confirm', 'value' => 'Sind Sie sicher, dass Sie dieses Angebot löschen möchten?', 'is_active' => 1],
+            ['lang' => 'de', 'string' => 'angebot.error.save', 'value' => 'Fehler beim Speichern des Angebots', 'is_active' => 1],
+            ['lang' => 'de', 'string' => 'angebot.error.delete', 'value' => 'Fehler beim Löschen des Angebots', 'is_active' => 1],
+            ['lang' => 'de', 'string' => 'angebot.success.save', 'value' => 'Angebot erfolgreich gespeichert!', 'is_active' => 1],
+            ['lang' => 'de', 'string' => 'angebot.loading.save', 'value' => 'Speichere...', 'is_active' => 1],
+            ['lang' => 'de', 'string' => 'angebot.error.load', 'value' => 'Fehler beim Laden der Angebote', 'is_active' => 1],
+            ['lang' => 'de', 'string' => 'angebot.error.save', 'value' => 'Fehler beim Speichern des Angebots', 'is_active' => 1],
+            ['lang' => 'de', 'string' => 'angebot.error.delete', 'value' => 'Fehler beim Löschen des Angebots', 'is_active' => 1],
+
+            // English translations
+            ['lang' => 'en', 'string' => 'button.cancel', 'value' => 'Cancel', 'is_active' => 1, 'language_key_id' => 20],
+            ['lang' => 'en', 'string' => 'button.delete', 'value' => 'Delete', 'is_active' => 1, 'language_key_id' => 22],
+            ['lang' => 'en', 'string' => 'button.edit', 'value' => 'Edit', 'is_active' => 1, 'language_key_id' => 21],
+            ['lang' => 'en', 'string' => 'button.save', 'value' => 'Save', 'is_active' => 1, 'language_key_id' => 19],
+            ['lang' => 'en', 'string' => 'error.validation_failed', 'value' => 'Validation failed. Please check your input.', 'is_active' => 1, 'language_key_id' => 32],
+            ['lang' => 'en', 'string' => 'footer.address', 'value' => 'WurstStraße 45, 64283 Heidenburg', 'is_active' => 1, 'language_key_id' => 16],
+            ['lang' => 'en', 'string' => 'footer.description', 'value' => 'Your exclusive erotic massage studio in Heidenburg. Sensual relaxation in elegant, discreet atmosphere. Highest quality and absolute discretion are our priority.', 'is_active' => 1, 'language_key_id' => 17],
+            ['lang' => 'en', 'string' => 'footer.title.line1', 'value' => 'Rhein', 'is_active' => 1, 'language_key_id' => 13],
+            ['lang' => 'en', 'string' => 'footer.title.line2', 'value' => 'Neckar', 'is_active' => 1, 'language_key_id' => 14],
+            ['lang' => 'en', 'string' => 'footer.title.line3', 'value' => 'Massage', 'is_active' => 1, 'language_key_id' => 15],
+            ['lang' => 'en', 'string' => 'hero.cta.book', 'value' => 'Book appointment', 'is_active' => 0, 'language_key_id' => 38],
+            ['lang' => 'en', 'string' => 'hero.cta.services', 'value' => 'Discover erotic services', 'is_active' => 0, 'language_key_id' => 39],
+            ['lang' => 'en', 'string' => 'hero.description', 'value' => 'Discover sensual and passionate massage techniques in an elegant, discreet atmosphere. Our experienced seductresses will pamper you with erotic treatments for ultimate pleasure and ecstasy.', 'is_active' => 1, 'language_key_id' => 34],
+            ['lang' => 'en', 'string' => 'hero.feature.discretion', 'value' => 'Seductive discretion', 'is_active' => 0, 'language_key_id' => 41],
+            ['lang' => 'en', 'string' => 'hero.feature.schedule', 'value' => 'Flexible pleasure appointments', 'is_active' => 0, 'language_key_id' => 42],
+            ['lang' => 'en', 'string' => 'hero.feature.technique', 'value' => 'Sensual erotic techniques', 'is_active' => 0, 'language_key_id' => 40],
+            ['lang' => 'en', 'string' => 'hero.title', 'value' => 'Rhein', 'is_active' => 0, 'language_key_id' => 35],
+            ['lang' => 'en', 'string' => 'hero.title_accent', 'value' => 'Neckar', 'is_active' => 0, 'language_key_id' => 36],
+            ['lang' => 'en', 'string' => 'hero.title_tail', 'value' => 'Massage Heidelburg', 'is_active' => 0, 'language_key_id' => 37],
+            ['lang' => 'en', 'string' => 'home.description', 'value' => 'Discover our passionate and sensual goddesses of eroticism who make your wildest fantasies come true.', 'is_active' => 0, 'language_key_id' => 47],
+            ['lang' => 'en', 'string' => 'home.hero.badge', 'value' => 'Top Erotic Massage Guest Studio in Heidenburg 🇩🇪', 'is_active' => 0, 'language_key_id' => 48],
+            ['lang' => 'en', 'string' => 'home.hero.intro', 'value' => 'Welcome to our exclusive erotic massage studio in Heidenburg. We offer you sensual and passionate seduction techniques in an elegant, discreet atmosphere. Our experienced seductresses pamper you with erotic treatments full of pleasure.\n\nEach treatment is individually tailored to your deepest wishes and desires. In our private, sensually furnished pleasure rooms, you can completely relax and live out your wildest fantasies. Discretion and the highest erotic quality are our top priorities.', 'is_active' => 0, 'language_key_id' => 49],
+            ['lang' => 'en', 'string' => 'home.title', 'value' => 'Our Seductive Masseuses', 'is_active' => 0, 'language_key_id' => 46],
+            ['lang' => 'en', 'string' => 'label.email', 'value' => 'Email', 'is_active' => 1, 'language_key_id' => 24],
+            ['lang' => 'en', 'string' => 'label.name', 'value' => 'Name', 'is_active' => 1, 'language_key_id' => 23],
+            ['lang' => 'en', 'string' => 'label.password', 'value' => 'Password', 'is_active' => 1, 'language_key_id' => 25],
+            ['lang' => 'en', 'string' => 'message.error_occurred', 'value' => 'An error occurred. Please try again.', 'is_active' => 1, 'language_key_id' => 31],
+            ['lang' => 'en', 'string' => 'message.success_saved', 'value' => 'Successfully saved!', 'is_active' => 1, 'language_key_id' => 30],
+            ['lang' => 'en', 'string' => 'mieterinnen.cta.book', 'value' => 'Book appointment', 'is_active' => 0, 'language_key_id' => 45],
+            ['lang' => 'en', 'string' => 'mieterinnen.description', 'value' => 'Discover our passionate and sensual goddesses of erotica. Each is a master of seduction, ready to fulfil your wildest fantasies and provide unforgettable nights of pleasure.', 'is_active' => 0, 'language_key_id' => 44],
+            ['lang' => 'en', 'string' => 'mieterinnen.title', 'value' => 'Our Seductive Masseuses', 'is_active' => 0, 'language_key_id' => 43],
+            ['lang' => 'en', 'string' => 'nav.ambiente', 'value' => 'Ambiance', 'is_active' => 1, 'language_key_id' => 10],
+            ['lang' => 'en', 'string' => 'nav.angebot', 'value' => 'Offer', 'is_active' => 1, 'language_key_id' => 9],
+            ['lang' => 'en', 'string' => 'nav.gaestebuch', 'value' => 'Guest Book', 'is_active' => 1, 'language_key_id' => 11],
+            ['lang' => 'en', 'string' => 'nav.home', 'value' => 'Home', 'is_active' => 1, 'language_key_id' => 7],
+            ['lang' => 'en', 'string' => 'nav.kontakt', 'value' => 'Contact', 'is_active' => 1, 'language_key_id' => 12],
+            ['lang' => 'en', 'string' => 'nav.mieterinnen', 'value' => 'Tenants', 'is_active' => 1, 'language_key_id' => 8],
+            ['lang' => 'en', 'string' => 'placeholder.enter_name', 'value' => 'Enter your name', 'is_active' => 1, 'language_key_id' => 29],
+            ['lang' => 'en', 'string' => 'placeholder.search', 'value' => 'Search...', 'is_active' => 1, 'language_key_id' => 28],
+            ['lang' => 'en', 'string' => 'success.record_created', 'value' => 'Record created successfully!', 'is_active' => 1, 'language_key_id' => 33],
+            ['lang' => 'en', 'string' => 'title.dashboard', 'value' => 'Dashboard', 'is_active' => 1, 'language_key_id' => 26],
+            ['lang' => 'en', 'string' => 'title.users', 'value' => 'Users', 'is_active' => 1, 'language_key_id' => 27],
+            ['lang' => 'en', 'string' => 'welcome_message', 'value' => 'Welcome to our application!', 'is_active' => 1, 'language_key_id' => 18],
+            // Angebots page English
+            ['lang' => 'en', 'string' => 'angebot.title', 'value' => 'Our Services', 'is_active' => 1],
+            ['lang' => 'en', 'string' => 'angebot.description', 'value' => 'Dive into our world of sensual seduction and erotic pleasure. Discover our diverse range of passionate massages and exclusive erotic services. Each treatment is individually tailored to your most hidden desires and longings.', 'is_active' => 1],
+            ['lang' => 'en', 'string' => 'angebot.button.add_new', 'value' => 'Add New Offer', 'is_active' => 1],
+            ['lang' => 'en', 'string' => 'angebot.additional_services.title', 'value' => 'Erotic Additional Services', 'is_active' => 1],
+            ['lang' => 'en', 'string' => 'angebot.additional_services.1', 'value' => 'Outcall Erotic Service (Hotel Visits)', 'is_active' => 1],
+            ['lang' => 'en', 'string' => 'angebot.additional_services.2', 'value' => 'Overnight Lust Companionship', 'is_active' => 1],
+            ['lang' => 'en', 'string' => 'angebot.additional_services.3', 'value' => 'Seductive Dinner Dates', 'is_active' => 1],
+            ['lang' => 'en', 'string' => 'angebot.additional_services.4', 'value' => 'Erotic Wellness Packages', 'is_active' => 1],
+            ['lang' => 'en', 'string' => 'angebot.additional_services.5', 'value' => 'Lust Gift Vouchers', 'is_active' => 1],
+            ['lang' => 'en', 'string' => 'angebot.additional_services.6', 'value' => 'Discreet Company Events with Erotica', 'is_active' => 1],
+            ['lang' => 'en', 'string' => 'angebot.pricing.title', 'value' => 'Prices & Booking', 'is_active' => 1],
+            ['lang' => 'en', 'string' => 'angebot.pricing.description', 'value' => 'All prices are base prices for our erotic seductions. Special requests, fetishes and special extras are calculated individually. For personal and discreet advice on your most hidden desires, contact us.', 'is_active' => 1],
+            ['lang' => 'en', 'string' => 'angebot.pricing.deposit.title', 'value' => 'Deposit', 'is_active' => 1],
+            ['lang' => 'en', 'string' => 'angebot.pricing.deposit.description', 'value' => '50% upon booking', 'is_active' => 1],
+            ['lang' => 'en', 'string' => 'angebot.pricing.cancellation.title', 'value' => 'Cancellation', 'is_active' => 1],
+            ['lang' => 'en', 'string' => 'angebot.pricing.cancellation.description', 'value' => 'Free 24h in advance', 'is_active' => 1],
+            ['lang' => 'en', 'string' => 'angebot.pricing.discretion.title', 'value' => 'Discretion', 'is_active' => 1],
+            ['lang' => 'en', 'string' => 'angebot.pricing.discretion.description', 'value' => '100% guaranteed', 'is_active' => 1],
+            ['lang' => 'en', 'string' => 'angebot.edit.title', 'value' => 'Edit Offer', 'is_active' => 1],
+            ['lang' => 'en', 'string' => 'angebot.create.title', 'value' => 'Create New Offer', 'is_active' => 1],
+            ['lang' => 'en', 'string' => 'angebot.form.title', 'value' => 'Title', 'is_active' => 1],
+            ['lang' => 'en', 'string' => 'angebot.form.category', 'value' => 'Category', 'is_active' => 1],
+            ['lang' => 'en', 'string' => 'angebot.form.description', 'value' => 'Description', 'is_active' => 1],
+            ['lang' => 'en', 'string' => 'angebot.form.price', 'value' => 'Price (€)', 'is_active' => 1],
+            ['lang' => 'en', 'string' => 'angebot.form.duration', 'value' => 'Duration (Minutes)', 'is_active' => 1],
+            ['lang' => 'en', 'string' => 'angebot.form.image', 'value' => 'Image URL (optional)', 'is_active' => 1],
+            ['lang' => 'en', 'string' => 'angebot.form.active', 'value' => 'Active', 'is_active' => 1],
+            ['lang' => 'en', 'string' => 'angebot.form.services', 'value' => 'Included Services', 'is_active' => 1],
+            ['lang' => 'en', 'string' => 'angebot.popular', 'value' => 'Popular', 'is_active' => 1],
+            ['lang' => 'en', 'string' => 'angebot.duration', 'value' => 'Min', 'is_active' => 1],
+            ['lang' => 'en', 'string' => 'angebot.book_now', 'value' => 'Book Now', 'is_active' => 1],
+            ['lang' => 'en', 'string' => 'angebot.no_services', 'value' => 'No offers available. Add a new offer.', 'is_active' => 1],
+            ['lang' => 'en', 'string' => 'angebot.delete.confirm', 'value' => 'Are you sure you want to delete this offer?', 'is_active' => 1],
+            ['lang' => 'en', 'string' => 'angebot.error.load', 'value' => 'Error loading offers', 'is_active' => 1],
+            ['lang' => 'en', 'string' => 'angebot.error.save', 'value' => 'Error saving the offer', 'is_active' => 1],
+            ['lang' => 'en', 'string' => 'angebot.error.delete', 'value' => 'Error deleting the offer', 'is_active' => 1],
+            ['lang' => 'en', 'string' => 'angebot.success.save', 'value' => 'Offer saved successfully!', 'is_active' => 1],
+            ['lang' => 'en', 'string' => 'angebot.loading.save', 'value' => 'Saving...', 'is_active' => 1],
+            // Mieterinnen page English
+            ['lang' => 'en', 'string' => 'mieterinnen.specialties.title', 'value' => 'Specialties:', 'is_active' => 1],
+            ['lang' => 'en', 'string' => 'mieterinnen.languages.title', 'value' => 'Languages:', 'is_active' => 1],
+            ['lang' => 'en', 'string' => 'mieterinnen.working_hours.title', 'value' => 'Working Hours:', 'is_active' => 1],
+        ];
+
+        foreach ($languageStrings as $stringData) {
+            // Find the language key by its key string
+            $languageKey = \App\Models\LanguageKey::where('key', $stringData['string'])->first();
+
+            if ($languageKey) {
+                LanguageString::updateOrCreate(
+                    [
+                        'lang' => $stringData['lang'],
+                        'string' => $stringData['string']
+                    ],
+                    array_merge($stringData, [
+                        'language_key_id' => $languageKey->id,
+                        'created_at' => now(),
+                        'updated_at' => now(),
+                    ])
+                );
+            }
+        }
+    }
+}

@@ -1,0 +1,31 @@
+<?php
+
+namespace App\Filament\Resources\Profiles\Pages;
+
+use App\Filament\Resources\Profiles\ProfileResource;
+use Filament\Actions\DeleteAction;
+use Filament\Actions\ViewAction;
+use Filament\Resources\Pages\EditRecord;
+
+class EditProfile extends EditRecord
+{
+    protected static string $resource = ProfileResource::class;
+
+    protected function getHeaderActions(): array
+    {
+        return [
+            ViewAction::make(),
+            DeleteAction::make(),
+        ];
+    }
+
+    protected function mutateFormDataBeforeSave(array $data): array
+    {
+        // Auto-set main_image to the first uploaded image if not set
+        if (empty($data['main_image']) && !empty($data['images']) && is_array($data['images']) && count($data['images']) > 0) {
+            $data['main_image'] = $data['images'][0];
+        }
+        
+        return $data;
+    }
+}

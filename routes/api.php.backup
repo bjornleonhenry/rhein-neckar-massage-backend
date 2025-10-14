@@ -1,0 +1,269 @@
+<?php
+
+use App\Http\Resources\MieterinResource;
+use App\Http\Resources\GaestebuchResource;
+use App\Models\Mieterin;
+use App\Models\Gaestebuch;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
+
+// Language Strings API
+Route::get('/language-strings', function (Request $request) {
+    $lang = $request->query('lang', 'en'); // Default to English if no lang specified
+
+    $languageStrings = \App\Models\LanguageString::where('lang', $lang)
+        ->where('is_active', true)
+        ->get()
+        ->map(function ($item) use ($lang) {
+            return [
+                'key' => $item->string,
+                'german' => $lang === 'de' ? $item->value : \App\Models\LanguageString::getTranslation($item->string, 'de', ''),
+                'english' => $lang === 'en' ? $item->value : \App\Models\LanguageString::getTranslation($item->string, 'en', ''),
+            ];
+        });
+
+    return response()->json($languageStrings);
+});
+                'english' => $lang === 'en' ? $item->value : \App\Models\LanguageString::getTranslation($item->string, 'en', ''),
+            ];
+        });
+
+    return response()->json($languageStrings);
+});t('/language-strings', function (Request $request) {
+    $lang = $request->query('lang', 'en'); // Default to English if no lang specified
+
+    $languageStrings = \App\Models\LanguageString::where('lang', $lang)
+        ->where('is_active', true)
+        ->get()
+        ->map(function ($item) use ($lang) {
+            return [
+                'key' => $item->string,
+                'german' => $lang === 'de' ? $item->value : \App\Models\LanguageString::getTranslation($item->string, 'de', ''),
+                'english' => $lang === 'en' ? $item->value : \App\Models\LanguageString::getTranslation($item->string, 'en', ''),
+            ];
+        });
+
+    return response()->json($languageStrings);
+});unction (Request $request) {
+    return $request->user() ? new UserResource($request->user()) : [];
+});
+
+Route::get('/health', function () {
+    return response()->json(['status' => 'ok']);
+});
+
+Route::get('/users', function (Request $request) {
+    $perPage = $request->query('per_page', 15);
+    $page = $request->query('page', 1);
+
+    return UserResource::collection(User::paginate($perPage, ['*'], 'page', $page));
+});
+
+Route::get('/gaestebuchs', function (Request $request) {
+    $perPage = $request->query('per_page', 15);
+    $page = $request->query('page', 1);
+
+    return GaestebuchResource::collection(Gaestebuch::paginate($perPage, ['*'], 'page', $page));
+});
+
+Route::get('/gaestebuchs/{id}', function ($id) {
+    return new GaestebuchResource(Gaestebuch::findOrFail($id));
+});
+
+Route::post('/gaestebuchs', function (Request $request) {
+    $validated = $request->validate([
+        'name' => 'required|string|max:255',
+        'date' => 'required|date',
+        'rating' => 'required|integer|min:1|max:5',
+        'service' => 'required|string|max:255',
+        'message' => 'required|string',
+        'verified' => 'boolean',
+    ]);
+
+    $gaestebuch = Gaestebuch::create($validated);
+
+    return new GaestebuchResource($gaestebuch);
+});
+
+Route::put('/gaestebuchs/{id}', function (Request $request, $id) {
+    $gaestebuch = Gaestebuch::findOrFail($id);
+
+    $validated = $request->validate([
+        'name' => 'required|string|max:255',
+        'date' => 'required|date',
+        'rating' => 'required|integer|min:1|max:5',
+        'service' => 'required|string|max:255',
+        'message' => 'required|string',
+        'verified' => 'boolean',
+    ]);
+
+    $gaestebuch->update($validated);
+
+    return new GaestebuchResource($gaestebuch);
+});
+
+Route::delete('/gaestebuchs/{id}', function ($id) {
+    $gaestebuch = Gaestebuch::findOrFail($id);
+    $gaestebuch->delete();
+
+    return response()->json(['message' => 'Gaestebuch deleted successfully']);
+});
+
+Route::get('/angebots', function (Request $request) {
+    $perPage = $request->query('per_page', 15);
+    $page = $request->query('page', 1);
+
+    return AngebotResource::collection(Angebot::paginate($perPage, ['*'], 'page', $page));
+});
+
+Route::get('/angebots/{id}', function ($id) {
+    return new AngebotResource(Angebot::findOrFail($id));
+});
+
+Route::post('/angebots', function (Request $request) {
+    $validated = $request->validate([
+        'title' => 'required|string|max:255',
+        'description' => 'required|string',
+        'price' => 'required|numeric|min:0',
+        'duration_minutes' => 'required|integer|min:1',
+        'category' => 'required|string|max:255',
+        'image' => 'nullable|string',
+        'services' => 'nullable|array',
+        'is_active' => 'boolean',
+    ]);
+
+    $angebot = Angebot::create($validated);
+
+    return new AngebotResource($angebot);
+});
+
+Route::put('/angebots/{id}', function (Request $request, $id) {
+    $angebot = Angebot::findOrFail($id);
+
+    $validated = $request->validate([
+        'title' => 'required|string|max:255',
+        'description' => 'required|string',
+        'price' => 'required|numeric|min:0',
+        'duration_minutes' => 'required|integer|min:1',
+        'category' => 'required|string|max:255',
+        'image' => 'nullable|string',
+        'services' => 'nullable|array',
+        'is_active' => 'boolean',
+    ]);
+
+    $angebot->update($validated);
+
+    return new AngebotResource($angebot);
+});
+
+Route::delete('/angebots/{id}', function ($id) {
+    $angebot = Angebot::findOrFail($id);
+    $angebot->delete();
+
+    return response()->json(['message' => 'Angebot deleted successfully']);
+});
+
+Route::get('/mieterinnen', function (Request $request) {
+    $perPage = $request->query('per_page', 15);
+    $page = $request->query('page', 1);
+
+    return MieterinResource::collection(Mieterin::paginate($perPage, ['*'], 'page', $page));
+});
+
+Route::get('/mieterinnen/{id}', function ($id) {
+    // Try to find by ID first, then by name if ID is not numeric
+    if (is_numeric($id)) {
+        $mieterin = Mieterin::find($id);
+    } else {
+        $mieterin = Mieterin::where('name', urldecode($id))->first();
+    }
+
+    if (!$mieterin) {
+        return response()->json(['error' => 'Mieterin not found'], 404);
+    }
+
+    return new MieterinResource($mieterin);
+});
+
+Route::post('/mieterinnen', function (Request $request) {
+    $validated = $request->validate([
+        'name' => 'required|string|max:255',
+        'age' => 'required|integer|min:18|max:100',
+        'description' => 'required|string',
+        'image' => 'required|string',
+        'specialties' => 'required|array',
+        'languages' => 'required|array',
+        'working_hours' => 'required|string',
+        'rating' => 'required|numeric|min:0|max:5',
+    ]);
+
+    $mieterin = Mieterin::create($validated);
+
+    return new MieterinResource($mieterin);
+});
+
+Route::put('/mieterinnen/{id}', function (Request $request, $id) {
+    $mieterin = Mieterin::findOrFail($id);
+
+    $validated = $request->validate([
+        'name' => 'required|string|max:255',
+        'age' => 'required|integer|min:18|max:100',
+        'description' => 'required|string',
+        'image' => 'required|string',
+        'specialties' => 'required|array',
+        'languages' => 'required|array',
+        'working_hours' => 'required|string',
+        'rating' => 'required|numeric|min:0|max:5',
+    ]);
+
+    $mieterin->update($validated);
+
+    return new MieterinResource($mieterin);
+});
+
+Route::delete('/mieterinnen/{id}', function ($id) {
+    $mieterin = Mieterin::findOrFail($id);
+    $mieterin->delete();
+
+    return response()->json(['message' => 'Mieterin deleted successfully']);
+});
+
+Route::get('/GirlsProfiles', function (Request $request) {
+    $perPage = $request->query('per_page', 15);
+    $page = $request->query('page', 1);
+
+    return MieterinResource::collection(Mieterin::paginate($perPage, ['*'], 'page', $page));
+});
+
+Route::get('/GirlsProfiles/{id}', function ($id) {
+    // Try to find by ID first, then by name if ID is not numeric
+    if (is_numeric($id)) {
+        $mieterin = Mieterin::find($id);
+    } else {
+        $mieterin = Mieterin::where('name', urldecode($id))->first();
+    }
+
+    if (!$mieterin) {
+        return response()->json(['error' => 'Mieterin not found'], 404);
+    }
+
+    return new MieterinResource($mieterin);
+});
+
+// Language Strings API
+Route::get('/language-strings', function (Request $request) {
+    $lang = $request->query('lang', 'en'); // Default to English if no lang specified
+
+    $languageStrings = \App\Models\LanguageString::where('lang', $lang)
+        ->where('is_active', true)
+        ->get()
+        ->map(function ($item) {
+            return [
+                'key' => $item->string,
+                'german' => $lang === 'de' ? $item->value : \App\Models\LanguageString::getTranslation($item->string, 'de', ''),
+                'english' => $lang === 'en' ? $item->value : \App\Models\LanguageString::getTranslation($item->string, 'en', ''),
+            ];
+        });
+
+    return response()->json($languageStrings);
+});
