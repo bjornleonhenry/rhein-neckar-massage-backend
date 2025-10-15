@@ -18,7 +18,6 @@
         "cheesegrits/filament-google-maps": "^3.0",
         "coolsam/modules": "^5.0",
         "filaforge/filament-api-explorer": "^1.0",
-        "filaforge/filament-database-tools": "*",
         "filaforge/filament-database-viewer": "^1.0",
         "filaforge/filament-user-manager": "^1.0",
         "filament/actions": "^4.0",

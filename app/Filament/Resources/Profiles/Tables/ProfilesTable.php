@@ -19,6 +19,11 @@ class ProfilesTable
                 TextColumn::make('name')
                     ->searchable()
                     ->sortable(),
+                \Filament\Tables\Columns\IconColumn::make('active')
+                    ->label('Active')
+                    ->boolean()
+                    ->sortable()
+                    ->toggleable(),
                 ImageColumn::make('main_image')
                     ->label('Main Image')
                     ->getStateUsing(function ($record) {
@@ -62,7 +67,11 @@ class ProfilesTable
             ])
             ->defaultSort('created_at', 'desc')
             ->filters([
-                //
+                \Filament\Tables\Filters\TernaryFilter::make('active')
+                    ->label('Status')
+                    ->placeholder('All profiles')
+                    ->trueLabel('Active only')
+                    ->falseLabel('Inactive only'),
             ])
             ->recordActions([
                 ViewAction::make(),

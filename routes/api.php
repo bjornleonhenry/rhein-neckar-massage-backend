@@ -295,7 +295,7 @@ Route::get('/profiles', function (Request $request) {
     $perPage = $request->query('per_page', 15);
     $page = $request->query('page', 1);
 
-    return ProfileResource::collection(Profile::paginate($perPage, ['*'], 'page', $page));
+    return ProfileResource::collection(Profile::where('active', true)->paginate($perPage, ['*'], 'page', $page));
 });
 
 Route::get('/profiles/{id}', function ($id) {

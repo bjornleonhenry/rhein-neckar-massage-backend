@@ -28,6 +28,10 @@ class ProfileForm
                             ->numeric()
                             ->minValue(18)
                             ->maxValue(100),
+                        \Filament\Forms\Components\Toggle::make('active')
+                            ->label('Active')
+                            ->default(true)
+                            ->helperText('When disabled, this profile will not be displayed on the frontend'),
                         // Legacy image field - hidden but kept for backward compatibility
                         // FileUpload::make('image')
                         //     ->label('Main Image (Legacy)')

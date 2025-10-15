@@ -36,6 +36,7 @@ class Profile extends Model
         'schedule',
         'additional_info',
         'profile_options',
+        'active',
     ];
 
     protected $casts = [
@@ -48,6 +49,7 @@ class Profile extends Model
         'massages' => 'array',
         'schedule' => 'array',
         'profile_options' => 'array',
+        'active' => 'boolean',
     ];
 
     /**
