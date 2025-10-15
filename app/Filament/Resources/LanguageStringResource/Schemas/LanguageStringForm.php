@@ -27,19 +27,11 @@ class LanguageStringForm
 
                 Select::make('type')
                     ->label('Type')
-                    ->options([
-                        'text' => 'Text',
-                        'button' => 'Button',
-                        'title' => 'Title',
-                        'nav' => 'Navigation',
-                        'footer' => 'Footer',
-                        'page' => 'Page',
-                        'admin' => 'Admin',
-                    ])
-                    ->default('text')
-                    ->required()
+                    ->options(\App\Models\LanguageKey::getAvailableTypes())
                     ->searchable()
-                    ->placeholder('Select type'),
+                    ->placeholder('Select or type a type')
+                    ->helperText('Select a common type or type a custom one')
+                    ->createOptionUsing(fn (string $value) => $value),
                 // Explicit German and English translation fields for simpler editing
                 Textarea::make('german_translation')
                     ->label('German')
@@ -68,7 +60,8 @@ class LanguageStringForm
                 Textarea::make('default')
                     ->label('Default Value')
                     ->rows(2)
-                    ->placeholder('Default text (optional)')
+                    ->placeholder('Default text')
+                    ->required()
                     ->helperText(''),
 
                 TagsInput::make('tags')
