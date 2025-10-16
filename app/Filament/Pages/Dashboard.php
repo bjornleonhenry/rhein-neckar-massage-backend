@@ -6,11 +6,26 @@ use Filament\Pages\Dashboard as BaseDashboard;
 use Filament\Actions\Action;
 use Filament\Actions\ActionGroup;
 use App\Services\NotificationService;
-use Illuminate\Support\Facades\Auth;
+use App\Filament\Widgets\CalendarWidget;
 
 class Dashboard extends BaseDashboard
 {
+   protected static ?string $title = 'Dashboard';
+
     protected static ?int $navigationSort = 1;
+
+    public function getWidgets(): array
+    {
+        return [
+            CalendarWidget::class,
+        ];
+    }
+
+    public function getColumns(): int | array
+    {
+        return 1;
+    }
+
     protected function getHeaderActions(): array
     {
         return [
@@ -81,4 +96,5 @@ class Dashboard extends BaseDashboard
             // ->visible(fn () => Auth::check()),
         ];
     }
+
 }

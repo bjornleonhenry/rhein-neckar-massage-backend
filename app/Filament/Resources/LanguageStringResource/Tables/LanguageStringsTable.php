@@ -38,13 +38,19 @@ class LanguageStringsTable
                     ->label('Type')
                     ->badge()
                     ->color(fn (string $state): string => match ($state) {
-                        'button' => 'primary',
+                        'button' => 'danger',
                         'text' => 'secondary',
                         'title' => 'warning',
                         'nav' => 'info',
                         'footer' => 'gray',
                         'page' => 'success',
                         'admin' => 'danger',
+            'alert' => 'warning',
+            'contact' => 'primary',
+            'testimonials' => 'white',
+            'label' => 'danger',
+            'custom' => 'success',
+            'other' => 'black',
                         default => 'secondary',
                     })
                     ->searchable()
@@ -108,13 +114,21 @@ class LanguageStringsTable
                 SelectFilter::make('type')
                     ->label('Type')
                     ->options([
-                        'text' => 'Text',
-                        'button' => 'Button',
-                        'title' => 'Title',
-                        'nav' => 'Navigation',
-                        'footer' => 'Footer',
-                        'page' => 'Page',
-                        'admin' => 'Admin',
+            'text' => 'Text',
+            'button' => 'Button',
+            'title' => 'Title',
+            'nav' => 'Navigation',
+            'footer' => 'Footer',
+            'header' => 'Header',
+            'page' => 'Page',
+            'admin' => 'Admin',
+            'component' => 'Component',
+            'alert' => 'Alert',
+            'contact' => 'Contact',
+            'testimonials' => 'Testimonials',
+            'label' => 'Label',
+            'custom' => 'Custom',
+            'other' => 'Other',
                     ])
                     ->multiple()
                     ->searchable(),
@@ -128,12 +142,17 @@ class LanguageStringsTable
             ->searchable()
             ->recordActions([
                 EditAction::make(),
-                DeleteAction::make(),
+ //              DeleteAction::make(),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
                     DeleteBulkAction::make(),
                 ]),
             ]);
+    }
+
+    public static function getPaginationPageOptions(): array
+    {
+        return [10, 25, 50, 100];
     }
 }

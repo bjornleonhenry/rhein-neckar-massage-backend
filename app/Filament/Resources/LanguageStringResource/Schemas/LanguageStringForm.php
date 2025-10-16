@@ -36,6 +36,7 @@ class LanguageStringForm
                 Textarea::make('german_translation')
                     ->label('German')
                     ->rows(3)
+                    ->required()
                     ->placeholder('Enter German translation')
                     ->helperText('German translation for this key')
                     ->afterStateHydrated(function ($state, $set, $record) {
@@ -48,6 +49,7 @@ class LanguageStringForm
                 Textarea::make('english_translation')
                     ->label('English')
                     ->rows(3)
+                    ->required()
                     ->placeholder('Enter English translation')
                     ->helperText('English translation for this key')
                     ->afterStateHydrated(function ($state, $set, $record) {

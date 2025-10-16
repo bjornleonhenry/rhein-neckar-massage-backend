@@ -38,6 +38,7 @@
         "laravel/tinker": "^2.10.1",
         "livewire/livewire": "^3.6.4",
         "marjose123/filament-webhook-server": "^3.0",
+        "saade/filament-fullcalendar": "^4.0@beta",
         "solution-forest/filament-tree": "^3.0",
         "spatie/laravel-package-tools": "*",
         "spatie/laravel-settings": "^3.4",
@@ -47,7 +48,6 @@
         "zpmlabs/filament-api-docs-builder": "^2.0"
     },
     "require-dev": {
-        "barryvdh/laravel-debugbar": "^3.16",
         "fakerphp/faker": "^1.23",
         "laravel/pail": "^1.2.2",
         "laravel/pint": "^1.13",

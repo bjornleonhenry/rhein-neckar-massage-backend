@@ -85,8 +85,16 @@ class LanguageKey extends Model
             'title' => 'Title',
             'nav' => 'Navigation',
             'footer' => 'Footer',
+            'header' => 'Header',
             'page' => 'Page',
             'admin' => 'Admin',
+            'component' => 'Component',
+            'alert' => 'Alert',
+            'contact' => 'Contact',
+            'testimonials' => 'Testimonials',
+            'label' => 'Label',
+            'custom' => 'Custom',
+            'other' => 'Other',
         ];
     }
 }

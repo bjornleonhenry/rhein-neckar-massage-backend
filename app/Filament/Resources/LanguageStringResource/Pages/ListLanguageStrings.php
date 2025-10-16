@@ -10,8 +10,26 @@ class ListLanguageStrings extends ListRecords
 {
     protected static string $resource = LanguageStringResource::class;
 
+
+
     protected function getHeaderActions(): array
+
     {
+
+
+        return [
+
+
+            Actions\CreateAction::make()
+
+
+                ->label('Add Key'),
+
+
+        ];
+
+
         return [];
+
     }
 }

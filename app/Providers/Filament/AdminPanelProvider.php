@@ -26,6 +26,8 @@ use Marjose123\FilamentWebhookServer\WebhookPlugin;
 use Awcodes\QuickCreate\QuickCreatePlugin;
 use Swis\Filament\Backgrounds\FilamentBackgroundsPlugin;
 use Swis\Filament\Backgrounds\ImageProviders\MyImages;
+use Saade\FilamentFullCalendar\FilamentFullCalendarPlugin;
+use Livewire\Livewire;
 
 
 
@@ -54,6 +56,7 @@ class AdminPanelProvider extends PanelProvider
             ->widgets([
                 AccountWidget::class,
                 ThemeToggle::class,
+                \App\Filament\Widgets\CalendarWidget::class,
             ])
             ->navigationGroups([
                 NavigationGroup::make()
@@ -96,6 +99,7 @@ class AdminPanelProvider extends PanelProvider
                         MyImages::make()
                             ->directory('images/splash')
                     ),
+                FilamentFullCalendarPlugin::make(),
             ])
             ->plugins([
                 QuickCreatePlugin::make()
@@ -148,6 +152,11 @@ class AdminPanelProvider extends PanelProvider
 </style>
             ',
         );
+
+        // Ensure Livewire can resolve the calendar widget component name used by Filament
+        if (class_exists(\App\Filament\Widgets\CalendarWidget::class)) {
+            Livewire::component('app.filament.widgets.calendar-widget', \App\Filament\Widgets\CalendarWidget::class);
+        }
 
         // Add Alpine.js $persist polyfill for compatibility with Livewire v3.6.4
         Filament::registerRenderHook(
