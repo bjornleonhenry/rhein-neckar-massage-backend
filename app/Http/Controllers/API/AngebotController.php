@@ -17,7 +17,10 @@ class AngebotController extends Controller
         $perPage = $request->query('per_page', 15);
         $page = $request->query('page', 1);
 
-        return AngebotResource::collection(Angebot::paginate($perPage, ['*'], 'page', $page));
+        return AngebotResource::collection(
+            Angebot::where('is_active', true)
+                ->paginate($perPage, ['*'], 'page', $page)
+        );
     }
 
     /**
@@ -46,7 +49,8 @@ class AngebotController extends Controller
      */
     public function show(string $id)
     {
-        return new AngebotResource(Angebot::findOrFail($id));
+        $angebot = Angebot::where('is_active', true)->findOrFail($id);
+        return new AngebotResource($angebot);
     }
 
     /**

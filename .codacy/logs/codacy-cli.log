@@ -1,2 +1,22 @@
 2025-10-16T11:13:41+07:00 [INFO] (codacy-cli-v2/cli-v2.go:27) Starting Codacy CLI version=1.0.0-main.358.sha.7cb05d0 (7cb05d0) built at 2025-09-19T09:27:42Z
 2025-10-16T11:13:41+07:00 [INFO] (codacy-cli-v2/cli-v2.go:55) No configuration file was found, execute init command first.
+2025-10-30T21:16:51+07:00 [INFO] (codacy-cli-v2/cli-v2.go:27) Starting Codacy CLI version=1.0.0-main.360.sha.06bb49b (06bb49b) built at 2025-10-21T10:02:19Z
+2025-10-30T21:16:51+07:00 [INFO] (codacy-cli-v2/cmd/root.go:34) Executing CLI command command=init full_command=[/home/baba/.cache/codacy/codacy-cli-v2/1.0.0-main.360.sha.06bb49b/codacy-cli-v2 init] args=[]
+2025-10-30T21:17:14+07:00 [INFO] (codacy-cli-v2/cli-v2.go:27) Starting Codacy CLI version=1.0.0-main.360.sha.06bb49b (06bb49b) built at 2025-10-21T10:02:19Z
+2025-10-30T21:17:14+07:00 [INFO] (codacy-cli-v2/cmd/root.go:34) Executing CLI command command=install full_command=[/home/baba/.cache/codacy/codacy-cli-v2/1.0.0-main.360.sha.06bb49b/codacy-cli-v2 install] args=[]
+2025-10-30T21:17:14+07:00 [INFO] (codacy-cli-v2/cmd/install.go:72) All components are already installed
+2025-10-30T21:17:14+07:00 [INFO] (codacy-cli-v2/cli-v2.go:27) Starting Codacy CLI version=1.0.0-main.360.sha.06bb49b (06bb49b) built at 2025-10-21T10:02:19Z
+2025-10-30T21:17:14+07:00 [INFO] (codacy-cli-v2/cmd/root.go:34) Executing CLI command command=analyze full_command=[/home/baba/.cache/codacy/codacy-cli-v2/1.0.0-main.360.sha.06bb49b/codacy-cli-v2 analyze app/Http/Controllers/API/AngebotController.php --format sarif] args=[app/Http/Controllers/API/AngebotController.php]
+2025-10-30T21:17:14+07:00 [INFO] (codacy-cli-v2/cmd/analyze.go:341) Config file found for tool tool=lizard toolConfigPath=.codacy/tools-configs/lizard.yaml
+2025-10-30T21:17:16+07:00 [INFO] (codacy-cli-v2/cmd/analyze.go:341) Config file found for tool tool=semgrep toolConfigPath=.codacy/tools-configs/semgrep.yaml
+2025-10-30T21:17:27+07:00 [INFO] (codacy-cli-v2/cmd/analyze.go:341) Config file found for tool tool=trivy toolConfigPath=.codacy/tools-configs/trivy.yaml
+2025-10-30T21:19:18+07:00 [INFO] (codacy-cli-v2/cli-v2.go:27) Starting Codacy CLI version=1.0.0-main.360.sha.06bb49b (06bb49b) built at 2025-10-21T10:02:19Z
+2025-10-30T21:19:18+07:00 [INFO] (codacy-cli-v2/cmd/root.go:34) Executing CLI command command=analyze full_command=[/home/baba/.cache/codacy/codacy-cli-v2/1.0.0-main.360.sha.06bb49b/codacy-cli-v2 analyze app/Http/Controllers/API/AmbientController.php --format sarif] args=[app/Http/Controllers/API/AmbientController.php]
+2025-10-30T21:19:18+07:00 [INFO] (codacy-cli-v2/cmd/analyze.go:341) Config file found for tool tool=semgrep toolConfigPath=.codacy/tools-configs/semgrep.yaml
+2025-10-30T21:19:26+07:00 [INFO] (codacy-cli-v2/cmd/analyze.go:341) Config file found for tool tool=trivy toolConfigPath=.codacy/tools-configs/trivy.yaml
+2025-10-30T21:19:26+07:00 [INFO] (codacy-cli-v2/cmd/analyze.go:341) Config file found for tool tool=lizard toolConfigPath=.codacy/tools-configs/lizard.yaml
+2025-10-30T21:19:27+07:00 [INFO] (codacy-cli-v2/cli-v2.go:27) Starting Codacy CLI version=1.0.0-main.360.sha.06bb49b (06bb49b) built at 2025-10-21T10:02:19Z
+2025-10-30T21:19:27+07:00 [INFO] (codacy-cli-v2/cmd/root.go:34) Executing CLI command full_command=[/home/baba/.cache/codacy/codacy-cli-v2/1.0.0-main.360.sha.06bb49b/codacy-cli-v2 analyze routes/api.php --format sarif] args=[routes/api.php] command=analyze
+2025-10-30T21:19:27+07:00 [INFO] (codacy-cli-v2/cmd/analyze.go:341) Config file found for tool toolConfigPath=.codacy/tools-configs/lizard.yaml tool=lizard
+2025-10-30T21:19:27+07:00 [INFO] (codacy-cli-v2/cmd/analyze.go:341) Config file found for tool toolConfigPath=.codacy/tools-configs/semgrep.yaml tool=semgrep
+2025-10-30T21:19:35+07:00 [INFO] (codacy-cli-v2/cmd/analyze.go:341) Config file found for tool tool=trivy toolConfigPath=.codacy/tools-configs/trivy.yaml

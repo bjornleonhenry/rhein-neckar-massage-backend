@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\AmbientController;
 use App\Http\Controllers\API\AngebotController;
 use App\Http\Resources\AngebotResource;
 use App\Http\Resources\MieterinResource;
@@ -77,6 +78,7 @@ Route::delete('/gaestebuchs/{id}', function ($id) {
 });
 
 Route::apiResource('/angebots', AngebotController::class);
+Route::apiResource('/ambients', AmbientController::class);
 
 Route::get('/mieterinnen', function (Request $request) {
     $perPage = $request->query('per_page', 15);
