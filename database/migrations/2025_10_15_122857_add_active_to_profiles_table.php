@@ -12,7 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('profiles', function (Blueprint $table) {
-            $table->boolean('active')->default(true)->after('profile_options');
+            // Add active column only if it doesn't exist
+            if (!Schema::hasColumn('profiles', 'active')) {
+                $table->boolean('active')->default(true)->after('profile_options');
+            }
         });
     }
 
@@ -22,7 +25,10 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('profiles', function (Blueprint $table) {
-            $table->dropColumn('active');
+            // Drop active column only if it exists
+            if (Schema::hasColumn('profiles', 'active')) {
+                $table->dropColumn('active');
+            }
         });
     }
 };

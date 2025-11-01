@@ -12,7 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('mieterinnen', function (Blueprint $table) {
-            $table->boolean('is_active')->default(true)->after('rating');
+            // Add is_active column only if it doesn't exist
+            if (!Schema::hasColumn('mieterinnen', 'is_active')) {
+                $table->boolean('is_active')->default(true)->after('rating');
+            }
         });
     }
 
@@ -22,7 +25,10 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('mieterinnen', function (Blueprint $table) {
-            $table->dropColumn('is_active');
+            // Drop is_active column only if it exists
+            if (Schema::hasColumn('mieterinnen', 'is_active')) {
+                $table->dropColumn('is_active');
+            }
         });
     }
 };

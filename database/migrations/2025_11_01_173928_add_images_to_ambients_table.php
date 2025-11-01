@@ -12,7 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('ambients', function (Blueprint $table) {
-            $table->json('images')->nullable()->after('image');
+            // Add images column only if it doesn't exist
+            if (!Schema::hasColumn('ambients', 'images')) {
+                $table->json('images')->nullable()->after('image');
+            }
         });
     }
 
@@ -22,7 +25,10 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('ambients', function (Blueprint $table) {
-            $table->dropColumn('images');
+            // Drop images column only if it exists
+            if (Schema::hasColumn('ambients', 'images')) {
+                $table->dropColumn('images');
+            }
         });
     }
 };
