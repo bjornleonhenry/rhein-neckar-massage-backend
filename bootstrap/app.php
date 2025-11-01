@@ -19,11 +19,11 @@ return Application::configure(basePath: dirname(__DIR__))
             'api/*',
         ]);
         $middleware->web([
-            \Illuminate\Http\Middleware\HandleCors::class,
+            \App\Http\Middleware\CorsMiddleware::class,
             \App\Http\Middleware\ApplyTheme::class,
         ]);
         $middleware->api([
-            \Illuminate\Http\Middleware\HandleCors::class,
+            \App\Http\Middleware\CorsMiddleware::class,
         ]);
         $middleware->redirectUsersTo(function (Request $request) {
             // hack https://github.com/laravel/laravel/pull/6229

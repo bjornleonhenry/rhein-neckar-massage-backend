@@ -20,3 +20,56 @@
 2025-10-30T21:19:27+07:00 [INFO] (codacy-cli-v2/cmd/analyze.go:341) Config file found for tool toolConfigPath=.codacy/tools-configs/lizard.yaml tool=lizard
 2025-10-30T21:19:27+07:00 [INFO] (codacy-cli-v2/cmd/analyze.go:341) Config file found for tool toolConfigPath=.codacy/tools-configs/semgrep.yaml tool=semgrep
 2025-10-30T21:19:35+07:00 [INFO] (codacy-cli-v2/cmd/analyze.go:341) Config file found for tool tool=trivy toolConfigPath=.codacy/tools-configs/trivy.yaml
+2025-10-30T21:26:31+07:00 [INFO] (codacy-cli-v2/cli-v2.go:27) Starting Codacy CLI version=1.0.0-main.360.sha.06bb49b (06bb49b) built at 2025-10-21T10:02:19Z
+2025-10-30T21:26:31+07:00 [INFO] (codacy-cli-v2/cmd/root.go:34) Executing CLI command full_command=[/home/baba/.cache/codacy/codacy-cli-v2/1.0.0-main.360.sha.06bb49b/codacy-cli-v2 analyze src/pages/Angebot.tsx --format sarif] args=[src/pages/Angebot.tsx] command=analyze
+2025-10-30T21:26:31+07:00 [ERROR] (codacy-cli-v2/cmd/analyze.go:449) Analysis failed because path does not exist path=src/pages/Angebot.tsx
+2025-10-30T21:26:31+07:00 [INFO] (codacy-cli-v2/cli-v2.go:27) Starting Codacy CLI version=1.0.0-main.360.sha.06bb49b (06bb49b) built at 2025-10-21T10:02:19Z
+2025-10-30T21:26:31+07:00 [INFO] (codacy-cli-v2/cmd/root.go:34) Executing CLI command command=analyze full_command=[/home/baba/.cache/codacy/codacy-cli-v2/1.0.0-main.360.sha.06bb49b/codacy-cli-v2 analyze src/pages/Ambiente.tsx --format sarif] args=[src/pages/Ambiente.tsx]
+2025-10-30T21:26:31+07:00 [ERROR] (codacy-cli-v2/cmd/analyze.go:449) Analysis failed because path does not exist path=src/pages/Ambiente.tsx
+2025-10-30T21:36:24+07:00 [INFO] (codacy-cli-v2/cli-v2.go:27) Starting Codacy CLI version=1.0.0-main.360.sha.06bb49b (06bb49b) built at 2025-10-21T10:02:19Z
+2025-10-30T21:36:24+07:00 [INFO] (codacy-cli-v2/cmd/root.go:34) Executing CLI command command=analyze full_command=[/home/baba/.cache/codacy/codacy-cli-v2/1.0.0-main.360.sha.06bb49b/codacy-cli-v2 analyze app/Http/Middleware/CorsMiddleware.php --format sarif] args=[app/Http/Middleware/CorsMiddleware.php]
+2025-10-30T21:36:24+07:00 [INFO] (codacy-cli-v2/cmd/analyze.go:341) Config file found for tool tool=trivy toolConfigPath=.codacy/tools-configs/trivy.yaml
+2025-10-30T21:36:24+07:00 [INFO] (codacy-cli-v2/cmd/analyze.go:341) Config file found for tool tool=lizard toolConfigPath=.codacy/tools-configs/lizard.yaml
+2025-10-30T21:36:24+07:00 [INFO] (codacy-cli-v2/cmd/analyze.go:341) Config file found for tool tool=semgrep toolConfigPath=.codacy/tools-configs/semgrep.yaml
+2025-10-30T21:36:32+07:00 [INFO] (codacy-cli-v2/cli-v2.go:27) Starting Codacy CLI version=1.0.0-main.360.sha.06bb49b (06bb49b) built at 2025-10-21T10:02:19Z
+2025-10-30T21:36:32+07:00 [INFO] (codacy-cli-v2/cmd/root.go:34) Executing CLI command command=analyze full_command=[/home/baba/.cache/codacy/codacy-cli-v2/1.0.0-main.360.sha.06bb49b/codacy-cli-v2 analyze config/cors.php --format sarif] args=[config/cors.php]
+2025-10-30T21:36:32+07:00 [INFO] (codacy-cli-v2/cmd/analyze.go:341) Config file found for tool tool=semgrep toolConfigPath=.codacy/tools-configs/semgrep.yaml
+2025-10-30T21:36:40+07:00 [INFO] (codacy-cli-v2/cmd/analyze.go:341) Config file found for tool toolConfigPath=.codacy/tools-configs/trivy.yaml tool=trivy
+2025-10-30T21:36:40+07:00 [INFO] (codacy-cli-v2/cmd/analyze.go:341) Config file found for tool toolConfigPath=.codacy/tools-configs/lizard.yaml tool=lizard
+2025-10-30T21:36:41+07:00 [INFO] (codacy-cli-v2/cli-v2.go:27) Starting Codacy CLI version=1.0.0-main.360.sha.06bb49b (06bb49b) built at 2025-10-21T10:02:19Z
+2025-10-30T21:36:41+07:00 [INFO] (codacy-cli-v2/cmd/root.go:34) Executing CLI command command=analyze full_command=[/home/baba/.cache/codacy/codacy-cli-v2/1.0.0-main.360.sha.06bb49b/codacy-cli-v2 analyze bootstrap/app.php --format sarif] args=[bootstrap/app.php]
+2025-10-30T21:36:41+07:00 [INFO] (codacy-cli-v2/cmd/analyze.go:341) Config file found for tool tool=semgrep toolConfigPath=.codacy/tools-configs/semgrep.yaml
+2025-10-30T21:36:49+07:00 [INFO] (codacy-cli-v2/cmd/analyze.go:341) Config file found for tool toolConfigPath=.codacy/tools-configs/trivy.yaml tool=trivy
+2025-10-30T21:36:49+07:00 [INFO] (codacy-cli-v2/cmd/analyze.go:341) Config file found for tool tool=lizard toolConfigPath=.codacy/tools-configs/lizard.yaml
+2025-10-30T21:37:12+07:00 [INFO] (codacy-cli-v2/cli-v2.go:27) Starting Codacy CLI version=1.0.0-main.360.sha.06bb49b (06bb49b) built at 2025-10-21T10:02:19Z
+2025-10-30T21:37:12+07:00 [INFO] (codacy-cli-v2/cmd/root.go:34) Executing CLI command full_command=[/home/baba/.cache/codacy/codacy-cli-v2/1.0.0-main.360.sha.06bb49b/codacy-cli-v2 analyze app/Http/Middleware/CorsMiddleware.php --format sarif] args=[app/Http/Middleware/CorsMiddleware.php] command=analyze
+2025-10-30T21:37:12+07:00 [INFO] (codacy-cli-v2/cmd/analyze.go:341) Config file found for tool tool=lizard toolConfigPath=.codacy/tools-configs/lizard.yaml
+2025-10-30T21:37:12+07:00 [INFO] (codacy-cli-v2/cmd/analyze.go:341) Config file found for tool tool=semgrep toolConfigPath=.codacy/tools-configs/semgrep.yaml
+2025-10-30T21:37:20+07:00 [INFO] (codacy-cli-v2/cmd/analyze.go:341) Config file found for tool toolConfigPath=.codacy/tools-configs/trivy.yaml tool=trivy
+2025-10-30T21:50:46+07:00 [INFO] (codacy-cli-v2/cli-v2.go:27) Starting Codacy CLI version=1.0.0-main.360.sha.06bb49b (06bb49b) built at 2025-10-21T10:02:19Z
+2025-10-30T21:50:46+07:00 [INFO] (codacy-cli-v2/cmd/root.go:34) Executing CLI command command=analyze full_command=[/home/baba/.cache/codacy/codacy-cli-v2/1.0.0-main.360.sha.06bb49b/codacy-cli-v2 analyze public/storage/.htaccess --format sarif] args=[public/storage/.htaccess]
+2025-10-31T21:44:16+07:00 [INFO] (codacy-cli-v2/cli-v2.go:27) Starting Codacy CLI version=1.0.0-main.360.sha.06bb49b (06bb49b) built at 2025-10-21T10:02:19Z
+2025-10-31T21:44:16+07:00 [INFO] (codacy-cli-v2/cmd/root.go:34) Executing CLI command full_command=[/home/baba/.cache/codacy/codacy-cli-v2/1.0.0-main.360.sha.06bb49b/codacy-cli-v2 analyze app/Http/Resources/AmbientResource.php --format sarif] args=[app/Http/Resources/AmbientResource.php] command=analyze
+2025-10-31T21:44:16+07:00 [INFO] (codacy-cli-v2/cmd/analyze.go:341) Config file found for tool toolConfigPath=.codacy/tools-configs/trivy.yaml tool=trivy
+2025-10-31T21:46:03+07:00 [INFO] (codacy-cli-v2/cmd/analyze.go:341) Config file found for tool tool=lizard toolConfigPath=.codacy/tools-configs/lizard.yaml
+2025-10-31T21:46:03+07:00 [INFO] (codacy-cli-v2/cmd/analyze.go:341) Config file found for tool toolConfigPath=.codacy/tools-configs/semgrep.yaml tool=semgrep
+2025-10-31T21:46:11+07:00 [INFO] (codacy-cli-v2/cli-v2.go:27) Starting Codacy CLI version=1.0.0-main.360.sha.06bb49b (06bb49b) built at 2025-10-21T10:02:19Z
+2025-10-31T21:46:11+07:00 [INFO] (codacy-cli-v2/cmd/root.go:34) Executing CLI command args=[app/Http/Resources/AngebotResource.php] command=analyze full_command=[/home/baba/.cache/codacy/codacy-cli-v2/1.0.0-main.360.sha.06bb49b/codacy-cli-v2 analyze app/Http/Resources/AngebotResource.php --format sarif]
+2025-10-31T21:46:11+07:00 [INFO] (codacy-cli-v2/cmd/analyze.go:341) Config file found for tool tool=lizard toolConfigPath=.codacy/tools-configs/lizard.yaml
+2025-10-31T21:46:11+07:00 [INFO] (codacy-cli-v2/cmd/analyze.go:341) Config file found for tool tool=semgrep toolConfigPath=.codacy/tools-configs/semgrep.yaml
+2025-10-31T21:46:19+07:00 [INFO] (codacy-cli-v2/cmd/analyze.go:341) Config file found for tool tool=trivy toolConfigPath=.codacy/tools-configs/trivy.yaml
+2025-10-31T21:46:20+07:00 [INFO] (codacy-cli-v2/cli-v2.go:27) Starting Codacy CLI version=1.0.0-main.360.sha.06bb49b (06bb49b) built at 2025-10-21T10:02:19Z
+2025-10-31T21:46:20+07:00 [INFO] (codacy-cli-v2/cmd/root.go:34) Executing CLI command command=analyze full_command=[/home/baba/.cache/codacy/codacy-cli-v2/1.0.0-main.360.sha.06bb49b/codacy-cli-v2 analyze app/Filament/Resources/Ambients/Schemas/AmbientForm.php --format sarif] args=[app/Filament/Resources/Ambients/Schemas/AmbientForm.php]
+2025-10-31T21:46:20+07:00 [INFO] (codacy-cli-v2/cmd/analyze.go:341) Config file found for tool tool=lizard toolConfigPath=.codacy/tools-configs/lizard.yaml
+2025-10-31T21:46:20+07:00 [INFO] (codacy-cli-v2/cmd/analyze.go:341) Config file found for tool tool=semgrep toolConfigPath=.codacy/tools-configs/semgrep.yaml
+2025-10-31T21:46:27+07:00 [INFO] (codacy-cli-v2/cmd/analyze.go:341) Config file found for tool tool=trivy toolConfigPath=.codacy/tools-configs/trivy.yaml
+2025-11-01T19:15:06+07:00 [INFO] (codacy-cli-v2/cli-v2.go:27) Starting Codacy CLI version=1.0.0-main.360.sha.06bb49b (06bb49b) built at 2025-10-21T10:02:19Z
+2025-11-01T19:15:06+07:00 [INFO] (codacy-cli-v2/cmd/root.go:34) Executing CLI command command=analyze full_command=[/home/baba/.cache/codacy/codacy-cli-v2/1.0.0-main.360.sha.06bb49b/codacy-cli-v2 analyze app/Filament/Resources/Angebots/Schemas/AngebotForm.php --format sarif] args=[app/Filament/Resources/Angebots/Schemas/AngebotForm.php]
+2025-11-01T19:15:06+07:00 [INFO] (codacy-cli-v2/cmd/analyze.go:341) Config file found for tool toolConfigPath=.codacy/tools-configs/lizard.yaml tool=lizard
+2025-11-01T19:15:06+07:00 [INFO] (codacy-cli-v2/cmd/analyze.go:341) Config file found for tool toolConfigPath=.codacy/tools-configs/semgrep.yaml tool=semgrep
+2025-11-01T19:15:14+07:00 [INFO] (codacy-cli-v2/cmd/analyze.go:341) Config file found for tool toolConfigPath=.codacy/tools-configs/trivy.yaml tool=trivy
+2025-11-01T19:15:14+07:00 [INFO] (codacy-cli-v2/cli-v2.go:27) Starting Codacy CLI version=1.0.0-main.360.sha.06bb49b (06bb49b) built at 2025-10-21T10:02:19Z
+2025-11-01T19:15:14+07:00 [INFO] (codacy-cli-v2/cmd/root.go:34) Executing CLI command command=analyze full_command=[/home/baba/.cache/codacy/codacy-cli-v2/1.0.0-main.360.sha.06bb49b/codacy-cli-v2 analyze app/Filament/Resources/Ambients/Schemas/AmbientForm.php --format sarif] args=[app/Filament/Resources/Ambients/Schemas/AmbientForm.php]
+2025-11-01T19:15:14+07:00 [INFO] (codacy-cli-v2/cmd/analyze.go:341) Config file found for tool tool=semgrep toolConfigPath=.codacy/tools-configs/semgrep.yaml
+2025-11-01T19:15:22+07:00 [INFO] (codacy-cli-v2/cmd/analyze.go:341) Config file found for tool tool=trivy toolConfigPath=.codacy/tools-configs/trivy.yaml
+2025-11-01T19:15:22+07:00 [INFO] (codacy-cli-v2/cmd/analyze.go:341) Config file found for tool toolConfigPath=.codacy/tools-configs/lizard.yaml tool=lizard

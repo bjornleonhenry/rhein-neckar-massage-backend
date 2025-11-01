@@ -24,7 +24,7 @@ class AmbientResource extends JsonResource
             'size' => $this->size,
             'features' => $this->features,
             'amenities' => $this->amenities,
-            'image' => $this->image,
+            'image' => $this->image ? asset('storage/' . $this->image) : null,
             'rating' => $this->rating,
             'is_active' => $this->is_active,
             'created_at' => $this->created_at,

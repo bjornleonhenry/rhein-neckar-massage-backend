@@ -33,13 +33,17 @@ class AmbientForm
                     ->required()
                     ->columnSpanFull(),
                 FileUpload::make('image')
-                    ->image(),
+                    ->image()
+                    ->disk('public')
+                    ->directory('ambients')
+                    ->visibility('public'),
                 TextInput::make('rating')
                     ->required()
                     ->numeric()
                     ->default(0),
                 Toggle::make('is_active')
-                    ->required(),
+                    ->required()
+                    ->default(true),
                 TextInput::make('size'),
             ]);
     }

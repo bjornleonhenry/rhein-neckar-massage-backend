@@ -14,6 +14,18 @@ class AngebotResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        return parent::toArray($request);
+        return [
+            'id' => $this->id,
+            'title' => $this->title,
+            'description' => $this->description,
+            'price' => $this->price,
+            'duration_minutes' => $this->duration_minutes,
+            'category' => $this->category,
+            'image' => $this->image ? asset('storage/' . $this->image) : null,
+            'services' => $this->services,
+            'is_active' => $this->is_active,
+            'created_at' => $this->created_at,
+            'updated_at' => $this->updated_at,
+        ];
     }
 }

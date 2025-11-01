@@ -29,11 +29,15 @@ class AngebotForm
                 TextInput::make('category')
                     ->required(),
                 FileUpload::make('image')
-                    ->image(),
+                    ->image()
+                    ->disk('public')
+                    ->directory('angebots')
+                    ->visibility('public'),
                 Textarea::make('services')
                     ->columnSpanFull(),
                 Toggle::make('is_active')
-                    ->required(),
+                    ->required()
+                    ->default(true),
             ]);
     }
 }
