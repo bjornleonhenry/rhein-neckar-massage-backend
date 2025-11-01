@@ -17,12 +17,14 @@ class Mieterin extends Model
         'languages',
         'working_hours',
         'rating',
+        'is_active',
     ];
 
     protected $casts = [
         'specialties' => 'array',
         'languages' => 'array',
         'rating' => 'decimal:1',
+        'is_active' => 'boolean',
     ];
 
     /**

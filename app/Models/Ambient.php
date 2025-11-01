@@ -16,6 +16,7 @@ class Ambient extends Model
         'features',
         'amenities',
         'image',
+        'images',
         'rating',
         'is_active',
     ];
@@ -23,6 +24,7 @@ class Ambient extends Model
     protected $casts = [
         'features' => 'array',
         'amenities' => 'array',
+        'images' => 'array',
         'rating' => 'decimal:1',
         'is_active' => 'boolean',
         'capacity' => 'integer',

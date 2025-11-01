@@ -536,7 +536,7 @@ class LanguageStringSeeder extends Seeder
             ['lang' => 'en', 'string' => 'impressum.section9.description', 'value' => 'The content and works created by the site operators on these pages are subject to German copyright law. The reproduction, processing, distribution and any kind of exploitation outside the limits of copyright law require the written consent of the respective author or creator.', 'is_active' => 1],
 
             // Jobs page German
-            ['lang' => 'de', 'string' => 'jobs.title', 'value' => 'Karriere bei PayGirls', 'is_active' => 1],
+            ['lang' => 'de', 'string' => 'jobs.title', 'value' => 'Karriere bei Rhein Neckar Massage', 'is_active' => 1],
             ['lang' => 'de', 'string' => 'jobs.description', 'value' => 'Werden Sie Teil unseres exklusiven Teams und arbeiten Sie in einer professionellen, diskreten Umgebung mit attraktiven Verdienstmöglichkeiten.', 'is_active' => 1],
             ['lang' => 'de', 'string' => 'jobs.benefits.1.title', 'value' => 'Attraktive Verdienstmöglichkeiten', 'is_active' => 1],
             ['lang' => 'de', 'string' => 'jobs.benefits.1.description', 'value' => 'Überdurchschnittliche Bezahlung mit flexiblen Arbeitszeiten', 'is_active' => 1],
@@ -600,7 +600,7 @@ class LanguageStringSeeder extends Seeder
             ['lang' => 'de', 'string' => 'jobs.form.submit.default', 'value' => 'Bewerbung absenden', 'is_active' => 1],
 
             // Jobs page English
-            ['lang' => 'en', 'string' => 'jobs.title', 'value' => 'Career at PayGirls', 'is_active' => 1],
+            ['lang' => 'en', 'string' => 'jobs.title', 'value' => 'Career at Rhein Neckar Massage', 'is_active' => 1],
             ['lang' => 'en', 'string' => 'jobs.description', 'value' => 'Become part of our exclusive team and work in a professional, discreet environment with attractive earning opportunities.', 'is_active' => 1],
             ['lang' => 'en', 'string' => 'jobs.benefits.1.title', 'value' => 'Attractive Earning Opportunities', 'is_active' => 1],
             ['lang' => 'en', 'string' => 'jobs.benefits.1.description', 'value' => 'Above-average pay with flexible working hours', 'is_active' => 1],
@@ -674,7 +674,7 @@ class LanguageStringSeeder extends Seeder
             ['lang' => 'de', 'string' => 'kontakt.info.phone.value', 'value' => '+49 151 00000000', 'is_active' => 1],
             ['lang' => 'de', 'string' => 'kontakt.info.phone.note', 'value' => 'Täglich erreichbar', 'is_active' => 1],
             ['lang' => 'de', 'string' => 'kontakt.info.email.title', 'value' => 'E-Mail', 'is_active' => 1],
-            ['lang' => 'de', 'string' => 'kontakt.info.email.value', 'value' => 'paygirls@erotischsmassage.com', 'is_active' => 1],
+            ['lang' => 'de', 'string' => 'kontakt.info.email.value', 'value' => 'kontakt@rhein-neckar-massage.de', 'is_active' => 1],
             ['lang' => 'de', 'string' => 'kontakt.info.email.note', 'value' => 'Antwort innerhalb 24h', 'is_active' => 1],
             ['lang' => 'de', 'string' => 'kontakt.hours.title', 'value' => 'Öffnungszeiten', 'is_active' => 1],
             ['lang' => 'de', 'string' => 'kontakt.hours.1.day', 'value' => 'Montag - Freitag', 'is_active' => 1],
@@ -728,7 +728,7 @@ class LanguageStringSeeder extends Seeder
             ['lang' => 'en', 'string' => 'kontakt.info.phone.value', 'value' => '+49 151 00000000', 'is_active' => 1],
             ['lang' => 'en', 'string' => 'kontakt.info.phone.note', 'value' => 'Available daily', 'is_active' => 1],
             ['lang' => 'en', 'string' => 'kontakt.info.email.title', 'value' => 'Email', 'is_active' => 1],
-            ['lang' => 'en', 'string' => 'kontakt.info.email.value', 'value' => 'paygirls@erotischsmassage.com', 'is_active' => 1],
+            ['lang' => 'en', 'string' => 'kontakt.info.email.value', 'value' => 'kontakt@rhein-neckar-massage.de', 'is_active' => 1],
             ['lang' => 'en', 'string' => 'kontakt.info.email.note', 'value' => 'Response within 24h', 'is_active' => 1],
             ['lang' => 'en', 'string' => 'kontakt.hours.title', 'value' => 'Opening Hours', 'is_active' => 1],
             ['lang' => 'en', 'string' => 'kontakt.hours.1.day', 'value' => 'Monday - Friday', 'is_active' => 1],

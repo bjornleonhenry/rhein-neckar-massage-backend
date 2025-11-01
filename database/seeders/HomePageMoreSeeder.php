@@ -64,7 +64,7 @@ class HomePageMoreSeeder extends Seeder
             ['key' => 'contact.info.phone', 'value_de' => 'Telefon', 'value_en' => 'Phone'],
             ['key' => 'contact.info.phone.value', 'value_de' => '+49 151 00000000', 'value_en' => '+49 151 00000000'],
             ['key' => 'contact.info.email', 'value_de' => 'E-Mail', 'value_en' => 'Email'],
-            ['key' => 'contact.info.email.value', 'value_de' => 'paygirls@escortsmassage.com', 'value_en' => 'paygirls@escortsmassage.com'],
+            ['key' => 'contact.info.email.value', 'value_de' => 'kontakt@rhein-neckar-massage.de', 'value_en' => 'kontakt@rhein-neckar-massage.de'],
             ['key' => 'contact.opening.title', 'value_de' => 'Öffnungszeiten', 'value_en' => 'Opening Hours'],
             ['key' => 'contact.opening.1.day', 'value_de' => 'Montag - Freitag', 'value_en' => 'Monday - Friday'],
             ['key' => 'contact.opening.1.hours', 'value_de' => '12:00 - 24:00', 'value_en' => '12:00 - 24:00'],

@@ -83,8 +83,15 @@ Route::apiResource('/ambients', AmbientController::class);
 Route::get('/mieterinnen', function (Request $request) {
     $perPage = $request->query('per_page', 15);
     $page = $request->query('page', 1);
+    $activeOnly = $request->query('active_only', false);
 
-    return MieterinResource::collection(Mieterin::paginate($perPage, ['*'], 'page', $page));
+    $query = Mieterin::query();
+    
+    if ($activeOnly) {
+        $query->where('is_active', true);
+    }
+
+    return MieterinResource::collection($query->paginate($perPage, ['*'], 'page', $page));
 });
 
 Route::get('/mieterinnen/{id}', function ($id) {
