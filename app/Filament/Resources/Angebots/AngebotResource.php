@@ -6,6 +6,7 @@ use App\Filament\Resources\Angebots\Pages\CreateAngebot;
 use App\Filament\Resources\Angebots\Pages\EditAngebot;
 use App\Filament\Resources\Angebots\Pages\ListAngebots;
 use App\Filament\Resources\Angebots\Pages\ViewAngebot;
+use App\Filament\Resources\Angebots\RelationManagers\AngebotOptionsRelationManager;
 use App\Filament\Resources\Angebots\Schemas\AngebotForm;
 use App\Filament\Resources\Angebots\Schemas\AngebotInfolist;
 use App\Filament\Resources\Angebots\Tables\AngebotsTable;
@@ -46,7 +47,7 @@ class AngebotResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            AngebotOptionsRelationManager::class,
         ];
     }
 
