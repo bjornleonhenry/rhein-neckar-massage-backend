@@ -18,7 +18,8 @@ class AngebotController extends Controller
         $page = $request->query('page', 1);
 
         return AngebotResource::collection(
-            Angebot::where('is_active', true)
+            Angebot::with('options')
+                ->where('is_active', true)
                 ->paginate($perPage, ['*'], 'page', $page)
         );
     }
