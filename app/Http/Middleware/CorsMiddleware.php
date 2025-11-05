@@ -18,25 +18,24 @@ class CorsMiddleware
         // Get allowed origins from config
         $allowedOrigins = config('cors.allowed_origins');
         $origin = $request->header('Origin');
+        $allowedOrigin = $this->getAllowedOrigin($origin, $allowedOrigins);
 
         // Handle preflight OPTIONS request
         if ($request->isMethod('OPTIONS')) {
             return response('', 200)
-                ->header('Access-Control-Allow-Origin', $this->getAllowedOrigin($origin, $allowedOrigins))
+                ->header('Access-Control-Allow-Origin', $allowedOrigin)
                 ->header('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE, OPTIONS')
-                ->header('Access-Control-Allow-Headers', 'Content-Type, X-Requested-With, Authorization, Accept, Origin, X-CSRF-TOKEN')
-                ->header('Access-Control-Allow-Credentials', 'true')
+                ->header('Access-Control-Allow-Headers', '*')
                 ->header('Access-Control-Max-Age', '86400');
         }
 
         $response = $next($request);
 
         // Add CORS headers to response
-        $response->headers->set('Access-Control-Allow-Origin', $this->getAllowedOrigin($origin, $allowedOrigins));
+        $response->headers->set('Access-Control-Allow-Origin', $allowedOrigin);
         $response->headers->set('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE, OPTIONS');
-        $response->headers->set('Access-Control-Allow-Headers', 'Content-Type, X-Requested-With, Authorization, Accept, Origin, X-CSRF-TOKEN');
-        $response->headers->set('Access-Control-Allow-Credentials', 'true');
-        $response->headers->set('Access-Control-Expose-Headers', 'Content-Length, Content-Type');
+        $response->headers->set('Access-Control-Allow-Headers', '*');
+        $response->headers->set('Access-Control-Expose-Headers', '*');
 
         return $response;
     }
