@@ -24,6 +24,15 @@ class AngebotResource extends JsonResource
             'image' => $this->image ? asset('storage/' . $this->image) : null,
             'services' => $this->services,
             'is_active' => $this->is_active,
+            'options' => $this->options->map(function ($option) {
+                return [
+                    'id' => $option->id,
+                    'title' => $option->title,
+                    'price' => $option->angebot_price,
+                    'duration_minutes' => $option->angebot_time,
+                    'is_active' => $option->is_active,
+                ];
+            }),
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
         ];

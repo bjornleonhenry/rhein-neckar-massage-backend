@@ -26,6 +26,7 @@ class AngebotController extends Controller
 
         $angebots = Cache::remember($cacheKey, 3600, function () use ($perPage, $page, $category, $activeOnly) {
             $query = Angebot::query()
+                ->with('options')
                 ->select(['id', 'title', 'description', 'price', 'duration_minutes', 'category', 'image', 'services', 'is_active', 'created_at'])
                 ->orderBy('is_active', 'desc')
                 ->orderBy('created_at', 'desc');
