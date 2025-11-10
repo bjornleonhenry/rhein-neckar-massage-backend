@@ -62,6 +62,8 @@ class EditSettings extends EditRecord
                     ]);
 
                     Cache::forget('site_settings');
+                    // Ensure frontend picks up latest settings immediately
+                    Cache::forget('public_site_settings');
 
                     Notification::make()
                         ->title('Settings Reset')
@@ -83,6 +85,8 @@ class EditSettings extends EditRecord
     {
         // Clear any cached settings
         Cache::forget('site_settings');
+        // Ensure frontend picks up latest settings immediately
+        Cache::forget('public_site_settings');
 
         return $data;
     }

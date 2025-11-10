@@ -11,6 +11,8 @@ use App\Models\Gaestebuch;
 use App\Models\Profile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Cache;
+use App\Models\SettingsModel;
 
 Route::get('/user', function (Request $request) {
     return $request->user() ? new UserResource($request->user()) : [];
@@ -18,6 +20,21 @@ Route::get('/user', function (Request $request) {
 
 Route::get('/health', function () {
     return response()->json(['status' => 'ok']);
+});
+
+// Lightweight settings endpoint for frontend (exposes only safe public flags)
+Route::get('/settings', function () {
+    // Cache for 30 seconds to avoid hammering DB
+    $settings = Cache::remember('public_site_settings', 30, function () {
+        $data = SettingsModel::getSettingsData();
+        return [
+            'maintenance_mode' => (bool)($data['maintenance_mode'] ?? false),
+            'age_confirmation' => (bool)($data['age_confirmation'] ?? false),
+            'site_name' => $data['site_name'] ?? null,
+        ];
+    });
+
+    return response()->json($settings);
 });
 
 Route::get('/users', function (Request $request) {
