@@ -12,10 +12,11 @@ class SettingsModel extends Model
         'key',
         'title',
         'value',
+        'type',
     ];
 
     protected $casts = [
-        'value' => 'json',
+        // Don't cast value globally - handle type-specific casting in getSettingsData
     ];
 
     public $timestamps = true;
@@ -37,10 +38,26 @@ class SettingsModel extends Model
             'age_confirmation' => false,
         ];
 
-        // Load settings from database
-        $dbSettings = self::all();
+        // Load settings from database using raw query to avoid model casting issues
+        $dbSettings = \Illuminate\Support\Facades\DB::table('settings')->get();
         foreach ($dbSettings as $setting) {
-            $settings[$setting->key] = $setting->value;
+            // Cast value based on type column
+            $value = $setting->value;
+            if (isset($setting->type)) {
+                switch ($setting->type) {
+                    case 'boolean':
+                        $value = (bool)$value || $value === '1' || $value === 'true';
+                        break;
+                    case 'integer':
+                        $value = (int)$value;
+                        break;
+                    case 'json':
+                        $value = json_decode($value, true);
+                        break;
+                    // string and others: keep as-is
+                }
+            }
+            $settings[$setting->key] = $value;
         }
 
         return [
