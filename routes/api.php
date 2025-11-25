@@ -6,6 +6,7 @@ use App\Http\Resources\AngebotResource;
 use App\Http\Resources\MieterinResource;
 use App\Http\Resources\GaestebuchResource;
 use App\Http\Resources\ProfileResource;
+use App\Http\Resources\UserResource;
 use App\Models\Mieterin;
 use App\Models\Gaestebuch;
 use App\Models\Profile;
@@ -23,8 +24,18 @@ Route::get('/health', function () {
 });
 
 // Lightweight settings endpoint for frontend (exposes only safe public flags)
-Route::get('/settings', function () {
-    // Cache for 30 seconds to avoid hammering DB
+Route::get('/settings', function (Request $request) {
+    // If user is authenticated (logged in to backend), always show maintenance_mode as false
+    if ($request->user()) {
+        $data = SettingsModel::getSettingsData();
+        return response()->json([
+            'maintenance_mode' => false, // Allow access for authenticated users
+            'age_confirmation' => (bool)($data['age_confirmation'] ?? false),
+            'site_name' => $data['site_name'] ?? null,
+        ]);
+    }
+
+    // Cache for 30 seconds to avoid hammering DB for non-authenticated users
     $settings = Cache::remember('public_site_settings', 30, function () {
         $data = SettingsModel::getSettingsData();
         
