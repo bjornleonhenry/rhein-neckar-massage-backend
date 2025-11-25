@@ -27,8 +27,15 @@ Route::get('/settings', function () {
     // Cache for 30 seconds to avoid hammering DB
     $settings = Cache::remember('public_site_settings', 30, function () {
         $data = SettingsModel::getSettingsData();
+        
+        // Check if maintenance mode is enabled by checking if maintenance_mode setting has is_active = 1
+        $maintenanceModeEnabled = \Illuminate\Support\Facades\DB::table('settings')
+            ->where('key', 'maintenance_mode')
+            ->where('is_active', 1)
+            ->exists();
+        
         return [
-            'maintenance_mode' => (bool)($data['maintenance_mode'] ?? false),
+            'maintenance_mode' => $maintenanceModeEnabled,
             'age_confirmation' => (bool)($data['age_confirmation'] ?? false),
             'site_name' => $data['site_name'] ?? null,
         ];
