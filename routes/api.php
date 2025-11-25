@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\API\AmbientController;
 use App\Http\Controllers\API\AngebotController;
+use App\Http\Controllers\API\BookingController;
+use App\Http\Controllers\API\MessageController;
 use App\Http\Resources\AngebotResource;
 use App\Http\Resources\MieterinResource;
 use App\Http\Resources\GaestebuchResource;
@@ -356,3 +358,9 @@ Route::get('/profiles/{id}', function ($id) {
         return response()->json(['error' => 'Profile not found', 'message' => $e->getMessage()], 404);
     }
 });
+
+// Bookings API
+Route::post('/bookings', [BookingController::class, 'store']);
+
+// Messages API
+Route::post('/messages', [MessageController::class, 'store']);
