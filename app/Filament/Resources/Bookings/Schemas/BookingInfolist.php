@@ -2,16 +2,16 @@
 
 namespace App\Filament\Resources\Bookings\Schemas;
 
-use Filament\Schemas\Components\Section;
-use Filament\Schemas\Components\TextEntry;
-use Filament\Schemas\Schema;
+use Filament\Infolists\Components\Section;
+use Filament\Infolists\Components\TextEntry;
+use Filament\Infolists\Infolist;
 
 class BookingInfolist
 {
-    public static function configure(Schema $schema): Schema
+    public static function configure(Infolist $infolist): Infolist
     {
-        return $schema
-            ->components([
+        return $infolist
+            ->schema([
                 Section::make('Buchungsdetails')
                     ->schema([
                         TextEntry::make('girl')
