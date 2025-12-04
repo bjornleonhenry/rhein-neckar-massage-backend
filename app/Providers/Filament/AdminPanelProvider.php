@@ -29,7 +29,7 @@ use Swis\Filament\Backgrounds\ImageProviders\MyImages;
 use Saade\FilamentFullCalendar\FilamentFullCalendarPlugin;
 use Livewire\Livewire;
 use Filaforge\DatabaseQuery\DatabaseQueryPlugin;
-use Filaforge\DeepseekChat\Providers\DeepseekChatPanelPlugin;
+// use Filaforge\DeepseekChat\Providers\DeepseekChatPanelPlugin;
 use Filaforge\TerminalConsole\TerminalConsolePlugin;
 use Xentixar\FilamentPushNotifications\PushNotification;
 use BinaryBuilds\CommandRunner\CommandRunnerPlugin;
@@ -121,7 +121,7 @@ class AdminPanelProvider extends PanelProvider
          ->plugins([
                 DatabaseQueryPlugin::make(),
                 TerminalConsolePlugin::make(),
-                DeepseekChatPanelPlugin::make(),
+        //        DeepseekChatPanelPlugin::make(),
             ])
             ->plugins([
                 QuickCreatePlugin::make()
