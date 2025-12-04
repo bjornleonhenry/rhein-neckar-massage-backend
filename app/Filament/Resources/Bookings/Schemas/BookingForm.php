@@ -18,32 +18,48 @@ class BookingForm
             ->components([
                 Select::make('girl')
                     ->label('Masseurin')
-                    ->options([
-                        'Lila' => 'Lila - Tantra, Thai Massage, Entspannung',
-                        'Maya' => 'Maya - Erotik Massage, Öl Massage, VIP Service',
-                        'Nira' => 'Nira - Paar Massage, Wellness, Entspannung',
-                        'Kira' => 'Kira - Tantra, Meditation, Spirituell',
-                        'Siri' => 'Siri - Hot Stone, Deep Tissue, Reflexologie',
-                        'Ploy' => 'Ploy - Erotik Massage, Körperbehandlung, Intimität',
-                        'Anya' => 'Anya - VIP Service, Luxus Behandlung, Diskretion',
-                        'Nin' => 'Nin - Aromatherapie, Entspannung, Wellness',
-                    ])
+                    ->options(function () {
+                        return \App\Models\Profile::where('active', true)
+                            ->orderBy('name')
+                            ->pluck('name', 'name')
+                            ->toArray();
+                    })
                     ->required()
-                    ->searchable(),
+                    ->searchable()
+                    ->getSearchResultsUsing(function (string $search) {
+                        return \App\Models\Profile::where('active', true)
+                            ->where('name', 'like', "%{$search}%")
+                            ->orderBy('name')
+                            ->pluck('name', 'name')
+                            ->toArray();
+                    }),
                 Select::make('service')
                     ->label('Service')
-                    ->options([
-                        'Erotik Massage' => 'Erotik Massage - 60-90 Min - ab 150€',
-                        'Tantra Massage' => 'Tantra Massage - 90-120 Min - ab 200€',
-                        'VIP Service' => 'VIP Service - 120-180 Min - ab 300€',
-                        'Paar Erlebnis' => 'Paar Erlebnis - 90-150 Min - ab 350€',
-                        'Body-to-Body' => 'Body-to-Body - 60-90 Min - ab 180€',
-                        'Girlfriend Experience' => 'Girlfriend Experience - 120-240 Min - ab 400€',
-                        'Thai Massage' => 'Thai Massage - 60-90 Min - ab 120€',
-                        'Öl Massage' => 'Öl Massage - 60-90 Min - ab 140€',
-                    ])
+                    ->options(function () {
+                        return \App\Models\Angebot::where('is_active', true)
+                            ->orderBy('title')
+                            ->get()
+                            ->mapWithKeys(function ($angebot) {
+                                return [
+                                    $angebot->title => $angebot->title . ' - ' . $angebot->duration_minutes . ' Min - ' . number_format($angebot->price, 2) . '€'
+                                ];
+                            })
+                            ->toArray();
+                    })
                     ->required()
-                    ->searchable(),
+                    ->searchable()
+                    ->getSearchResultsUsing(function (string $search) {
+                        return \App\Models\Angebot::where('is_active', true)
+                            ->where('title', 'like', "%{$search}%")
+                            ->orderBy('title')
+                            ->get()
+                            ->mapWithKeys(function ($angebot) {
+                                return [
+                                    $angebot->title => $angebot->title . ' - ' . $angebot->duration_minutes . ' Min - ' . number_format($angebot->price, 2) . '€'
+                                ];
+                            })
+                            ->toArray();
+                    }),
                 DatePicker::make('date')
                     ->label('Datum')
                     ->required()

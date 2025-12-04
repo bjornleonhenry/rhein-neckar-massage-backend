@@ -28,7 +28,15 @@ use Swis\Filament\Backgrounds\FilamentBackgroundsPlugin;
 use Swis\Filament\Backgrounds\ImageProviders\MyImages;
 use Saade\FilamentFullCalendar\FilamentFullCalendarPlugin;
 use Livewire\Livewire;
-
+use Filaforge\DatabaseQuery\DatabaseQueryPlugin;
+use Filaforge\DeepseekChat\Providers\DeepseekChatPanelPlugin;
+use Filaforge\TerminalConsole\TerminalConsolePlugin;
+use Xentixar\FilamentPushNotifications\PushNotification;
+use BinaryBuilds\CommandRunner\CommandRunnerPlugin;
+use Muazzam\SlickScrollbar\SlickScrollbarPlugin;
+use ShuvroRoy\FilamentSpatieLaravelBackup\FilamentSpatieLaravelBackupPlugin;
+use ShuvroRoy\FilamentSpatieLaravelHealth\FilamentSpatieLaravelHealthPlugin;
+use WatheqAlshowaiter\FilamentStickyTableHeader\StickyTableHeaderPlugin;
 
 
 
@@ -66,7 +74,7 @@ class AdminPanelProvider extends PanelProvider
                     ->label('System')
                     ->collapsed(),
                 NavigationGroup::make()
-                    ->label('Messages')
+                    ->label('Settings')
                     ->collapsed(),
                 NavigationGroup::make()
                     ->label('Developer')
@@ -93,6 +101,15 @@ class AdminPanelProvider extends PanelProvider
                 'primary' => Color::Blue,
             ])
             ->plugins([
+                // ... other plugins
+                PushNotification::make(),
+                CommandRunnerPlugin::make()->canDeleteCommandHistory(fn ($user) => $user?->isAdmin() ?? false),
+                SlickScrollbarPlugin::make(),
+                FilamentSpatieLaravelBackupPlugin::make(),
+                FilamentSpatieLaravelHealthPlugin::make(),
+                StickyTableHeaderPlugin::make(),
+            ])
+            ->plugins([
                 FilamentBackgroundsPlugin::make()
                     ->showAttribution(false)
                     ->imageProvider(
@@ -100,6 +117,11 @@ class AdminPanelProvider extends PanelProvider
                             ->directory('images/splash')
                     ),
                 FilamentFullCalendarPlugin::make(),
+            ])
+         ->plugins([
+                DatabaseQueryPlugin::make(),
+                TerminalConsolePlugin::make(),
+                DeepseekChatPanelPlugin::make(),
             ])
             ->plugins([
                 QuickCreatePlugin::make()
@@ -121,7 +143,9 @@ class AdminPanelProvider extends PanelProvider
                     ->polling(30) // Set the polling interval in seconds for the webhook plugin
                     // Optionally set custom pages using existing Livewire components.
                     // ->customPageUsing(webhookPage: Webhooks::class, webhookHistoryPage: WebhookHistory::class)
-                    ->enablePlugin(),
+                    ->enablePlugin()
+                    ->navigationGroup('Settings'),
+                    
         ]);
     }
 

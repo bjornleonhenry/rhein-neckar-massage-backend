@@ -23,7 +23,7 @@ class Notifications extends Page implements HasTable
 
     protected static ?string $navigationLabel = 'Notification';
 
-    protected static string | \UnitEnum | null $navigationGroup = 'Developer';
+    protected static string | \UnitEnum | null $navigationGroup = 'Settings';
 
     protected static ?int $navigationSort = +0;
 

@@ -1,0 +1,36 @@
+{
+    "name": "filaforge/system-monitor",
+    "description": "System monitor plugin widgets for Filament v4",
+    "type": "library",
+    "license": "MIT",
+    "keywords": ["Laravel", "Filament", "Platform"],
+    "homepage": "https://github.com/filaforge/system-monitor",
+    "authors": [
+        { "name": "Filaforge" }
+    ],
+    "support": {
+        "email": "filaforger@gmail.com",
+    "source": "https://github.com/filaforge/system-monitor"
+    },
+    "require": {
+        "php": "^8.1",
+        "filament/filament": "^4.0",
+        "illuminate/support": "^12.0",
+        "symfony/process": "^7.0",
+        "spatie/laravel-package-tools": "^1.15"
+    },
+    "autoload": {
+        "psr-4": {
+            "Filaforge\\SystemMonitor\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Filaforge\\SystemMonitor\\Providers\\SystemMonitorServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

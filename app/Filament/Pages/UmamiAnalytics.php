@@ -9,6 +9,7 @@ use App\Services\UmamiService;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
 
+
 class UmamiAnalytics extends Page
 {
     protected static string | BackedEnum | null $navigationIcon = 'heroicon-o-chart-bar';
@@ -17,7 +18,9 @@ class UmamiAnalytics extends Page
     
     protected static ?string $title = 'Analytics';
     
-    protected static ?int $navigationSort = 1;
+    protected static ?int $navigationSort = 0;
+
+     protected static string | \UnitEnum | null $navigationGroup = 'Settings';
     
     protected string $view = 'filament.pages.umami-analytics';
     

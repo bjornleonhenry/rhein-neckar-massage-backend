@@ -1,0 +1,7 @@
+<?php
+
+use Filaforge\SystemMonitor\Http\Controllers\MetricsController;
+use Illuminate\Support\Facades\Route;
+
+Route::middleware(['web', 'auth'])->get('/filament-system-monitor/metrics', [MetricsController::class, 'index'])
+    ->name('filament-system-monitor.metrics');

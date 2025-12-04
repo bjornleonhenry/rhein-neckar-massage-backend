@@ -1,0 +1,36 @@
+{
+  "name": "filaforge/system-packages",
+  "description": "System Packages widget: list all Composer packages in a Filament table",
+  "type": "library",
+  "license": "MIT",
+  "keywords": ["Laravel", "Filament", "Platform"],
+  "homepage": "https://github.com/filaforge/system-packages",
+  "authors": [
+    { "name": "Filaforge" }
+  ],
+  "support": {
+    "email": "filaforger@gmail.com",
+  "source": "https://github.com/filaforge/system-packages"
+  },
+  "require": {
+    "php": ">=8.1",
+    "filament/filament": "^4.0",
+  "illuminate/support": "^12.0",
+    "spatie/laravel-package-tools": "^1.16"
+  },
+  "autoload": {
+    "psr-4": {
+      "Filaforge\\SystemPackages\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Filaforge\\SystemPackages\\Providers\\SystemPackagesServiceProvider"
+      ]
+    }
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
+}
+

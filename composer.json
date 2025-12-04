@@ -14,12 +14,19 @@
         "php": "^8.2",
         "awcodes/filament-quick-create": "^4.0",
         "bezhansalleh/filament-language-switch": "^4.0",
+        "binarybuilds/filament-command-runner": "^1.1",
         "blade-ui-kit/blade-heroicons": "^2.6",
         "cheesegrits/filament-google-maps": "^3.0",
         "coolsam/modules": "^5.0",
+        "deldius/filament-user-field": "^1.0",
+        "dotswan/filament-laravel-pulse": "^2.0",
+        "filafly/filament-identity-column": "^1.0",
+        "filaforge/database-query": "dev-main",
+        "filaforge/deepseek-chat": "dev-master",
         "filaforge/filament-api-explorer": "^1.0",
         "filaforge/filament-database-viewer": "^1.0",
         "filaforge/filament-user-manager": "^1.0",
+        "filaforge/terminal-console": "dev-main",
         "filament/actions": "^4.0",
         "filament/filament": "^4.0",
         "filament/forms": "^4.0",
@@ -29,23 +36,31 @@
         "filament/spatie-laravel-settings-plugin": "^4.0",
         "filament/tables": "^4.0",
         "filament/widgets": "^4.0",
+        "guava/calendar": "^2.0",
         "hugomyb/filament-media-action": "^4.0",
         "inerba/filament-db-config": "^1.1",
+        "jeffersongoncalves/filament-umami": "^2.0",
         "laravel/fortify": "^1.26",
         "laravel/framework": "^12.0",
+        "laravel/pulse": "^1.4",
         "laravel/sanctum": "^4.1",
         "laravel/telescope": "^5.11",
         "laravel/tinker": "^2.10.1",
         "livewire/livewire": "^3.6.4",
         "marjose123/filament-webhook-server": "^3.0",
+        "muazzam/slick-scrollbar": "^1.0",
         "resend/resend-laravel": "^1.0",
         "saade/filament-fullcalendar": "^4.0@beta",
+        "shuvroroy/filament-spatie-laravel-backup": "*",
+        "shuvroroy/filament-spatie-laravel-health": "^3.1",
         "solution-forest/filament-tree": "^3.0",
         "spatie/laravel-package-tools": "*",
         "spatie/laravel-settings": "^3.4",
         "spatie/laravel-webhook-server": "*",
         "stechstudio/filament-impersonate": "^4.0",
         "swisnl/filament-backgrounds": "^2.0",
+        "watheqalshowaiter/filament-sticky-table-header": "*",
+        "xentixar/filament-push-notifications": "^1.0",
         "zpmlabs/filament-api-docs-builder": "^2.0"
     },
     "require-dev": {
@@ -124,6 +139,28 @@
             "wikimedia/composer-merge-plugin": true
         }
     },
-    "minimum-stability": "stable",
+        "repositories": [
+        {
+            "type": "path",
+            "url": "plugins/filaforge-database-query"
+        },
+        {
+            "type": "path",
+            "url": "plugins/filaforge-database-viewer"
+        },
+        {
+            "type": "path",
+            "url": "plugins/filaforge-terminal-console"
+        },
+        {
+            "type": "path",
+            "url": "plugins/filaforge-api-explorer"
+        },
+        {
+            "type": "path",
+            "url": "plugins/filaforge-deepseek-chat"
+        }
+    ],
+    "minimum-stability": "dev",
     "prefer-stable": true
 }
