@@ -64,7 +64,6 @@ class AdminPanelProvider extends PanelProvider
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\Filament\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\Filament\Pages')
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
-            ->viteTheme('resources/css/filament/admin/theme.css')
             ->widgets([
                 AccountWidget::class,
                 ThemeToggle::class,
@@ -112,8 +111,6 @@ class AdminPanelProvider extends PanelProvider
                 FilamentSpatieLaravelBackupPlugin::make(),
                 FilamentSpatieLaravelHealthPlugin::make(),
                 StickyTableHeaderPlugin::make(),
-            ])
-            ->plugins([
                 FilamentBackgroundsPlugin::make()
                     ->showAttribution(false)
                     ->imageProvider(
@@ -121,39 +118,25 @@ class AdminPanelProvider extends PanelProvider
                             ->directory('images/splash')
                     ),
                 FilamentFullCalendarPlugin::make(),
-            ])
-         ->plugins([
                 DatabaseQueryPlugin::make(),
                 TerminalConsolePlugin::make(),
                 DeepseekChatPanelPlugin::make(),
-            ])
-            ->plugins([
                 QuickCreatePlugin::make()
                     ->excludes([
                         \App\Filament\Resources\UserResource::class,
                     ]),
-            ])
-        //    ->plugin(\Filaforge\TerminalConsole\TerminalConsolePlugin::make())
-        //     ->plugin(\Filaforge\DatabaseTools\DatabaseToolsPlugin::make())
-            ->plugin(\ShuvroRoy\FilamentSpatieLaravelBackup\FilamentSpatieLaravelBackupPlugin::make())
-                   ->plugins([
-            FilamentAwinTheme::make(),
-                   ])
-            ->plugins([
-              WebhookPlugin::make()
-                    ->icon('heroicon-o-bolt') // Set the icon for the plugin
-                    ->enableApiRoutes() // Enable the API routes
-                    ->includeModels([]) // Include the models you want to be able to receive webhooks for that is not automatically included
-                    ->excludedModels([]) // Exclude the models you don't want to be able to receive webhooks for
-                    ->keepLogs() // Keep the logs of the webhooks
-                    ->sort(1) // Set the sort order of the webhooks plugin in the navigation
-                    ->polling(30) // Set the polling interval in seconds for the webhook plugin
-                    // Optionally set custom pages using existing Livewire components.
-                    // ->customPageUsing(webhookPage: Webhooks::class, webhookHistoryPage: WebhookHistory::class)
+                FilamentAwinTheme::make(),
+                WebhookPlugin::make()
+                    ->icon('heroicon-o-bolt')
+                    ->enableApiRoutes()
+                    ->includeModels([])
+                    ->excludedModels([])
+                    ->keepLogs()
+                    ->sort(1)
+                    ->polling(30)
                     ->enablePlugin()
                     ->navigationGroup('Settings'),
-                    
-        ]);
+            ]);
     }
 
     public function boot(): void

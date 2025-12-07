@@ -4,15 +4,16 @@
     "src": "resources/css/app.css",
     "isEntry": true
   },
-  "resources/css/filament/admin/theme.css": {
-    "file": "assets/theme-CCc8YKtH.css",
-    "src": "resources/css/filament/admin/theme.css",
-    "isEntry": true
-  },
   "resources/js/app.js": {
     "file": "assets/app-Bj43h_rG.js",
     "name": "app",
     "src": "resources/js/app.js",
+    "isEntry": true
+  },
+  "resources/js/filament/admin/theme.js": {
+    "file": "assets/theme-BV8tPSo9.js",
+    "name": "theme",
+    "src": "resources/js/filament/admin/theme.js",
     "isEntry": true
   },
   "vendor/resma/filament-awin-theme/resources/css/theme.css": {

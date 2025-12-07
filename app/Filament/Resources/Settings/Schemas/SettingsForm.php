@@ -8,6 +8,7 @@ use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\Toggle;
 use Filament\Forms\Components\Select;
 use Filament\Schemas\Schema;
+use Filament\Forms\Components\Checkbox;
 
 class SettingsForm
 {
@@ -38,7 +39,7 @@ class SettingsForm
                             ->default('string')
                             ->required(),
                         self::getValueField(),
-                        Toggle::make('is_active')
+                        Checkbox::make('is_active')
                             ->label('Active')
                             ->default(true)
                             ->helperText('Enable or disable this setting'),

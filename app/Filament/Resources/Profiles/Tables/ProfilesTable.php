@@ -22,8 +22,7 @@ class ProfilesTable
                     ->sortable(),
                 ToggleColumn::make('active')
                     ->label('Active')
-                    ->sortable()
-                    ->toggleable(),
+                    ->sortable(),
                 ImageColumn::make('main_image')
                     ->label('Main Image')
                     ->getStateUsing(function ($record) {
