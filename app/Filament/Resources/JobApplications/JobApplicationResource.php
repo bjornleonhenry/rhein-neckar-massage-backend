@@ -22,7 +22,7 @@ class JobApplicationResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'first_name';
 
-    protected static ?string $navigationLabel = 'Bewerbungen';
+    protected static ?string $navigationLabel = 'Anstellung';
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedUserGroup;
 

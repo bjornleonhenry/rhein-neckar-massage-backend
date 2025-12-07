@@ -8,6 +8,7 @@ use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Columns\ToggleColumn;
 use Filament\Tables\Table;
 
 class ProfilesTable
@@ -19,9 +20,8 @@ class ProfilesTable
                 TextColumn::make('name')
                     ->searchable()
                     ->sortable(),
-                \Filament\Tables\Columns\IconColumn::make('active')
+                ToggleColumn::make('active')
                     ->label('Active')
-                    ->boolean()
                     ->sortable()
                     ->toggleable(),
                 ImageColumn::make('main_image')

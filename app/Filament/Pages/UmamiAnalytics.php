@@ -18,9 +18,9 @@ class UmamiAnalytics extends Page
     
     protected static ?string $title = 'Analytics';
     
-    protected static ?int $navigationSort = 0;
+    protected static ?int $navigationSort = 2;
 
-     protected static string | \UnitEnum | null $navigationGroup = 'Settings';
+     protected static string | \UnitEnum | null $navigationGroup = '';
     
     protected string $view = 'filament.pages.umami-analytics';
     

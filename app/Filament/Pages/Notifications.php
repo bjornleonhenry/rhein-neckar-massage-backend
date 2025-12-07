@@ -21,7 +21,7 @@ class Notifications extends Page implements HasTable
 
     protected string $view = 'filament.pages.notifications';
 
-    protected static ?string $navigationLabel = 'Notification';
+    protected static ?string $navigationLabel = 'Web Notifications';
 
     protected static string | \UnitEnum | null $navigationGroup = 'Settings';
 

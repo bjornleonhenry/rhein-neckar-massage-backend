@@ -29,7 +29,7 @@ use Swis\Filament\Backgrounds\ImageProviders\MyImages;
 use Saade\FilamentFullCalendar\FilamentFullCalendarPlugin;
 use Livewire\Livewire;
 use Filaforge\DatabaseQuery\DatabaseQueryPlugin;
-// use Filaforge\DeepseekChat\Providers\DeepseekChatPanelPlugin;
+use Filaforge\DeepseekChat\Providers\DeepseekChatPanelPlugin;
 use Filaforge\TerminalConsole\TerminalConsolePlugin;
 use Xentixar\FilamentPushNotifications\PushNotification;
 use BinaryBuilds\CommandRunner\CommandRunnerPlugin;
@@ -37,6 +37,7 @@ use Muazzam\SlickScrollbar\SlickScrollbarPlugin;
 use ShuvroRoy\FilamentSpatieLaravelBackup\FilamentSpatieLaravelBackupPlugin;
 use ShuvroRoy\FilamentSpatieLaravelHealth\FilamentSpatieLaravelHealthPlugin;
 use WatheqAlshowaiter\FilamentStickyTableHeader\StickyTableHeaderPlugin;
+use Resma\FilamentAwinTheme\FilamentAwinTheme;
 
 
 
@@ -58,9 +59,12 @@ class AdminPanelProvider extends PanelProvider
                 \App\Filament\Pages\ApiExplorerPage::class,
                 \App\Filament\Pages\DatabaseViewer::class,
             ])    
+                        ->brandLogo(fn () => view('filament.app.logo'))
+            ->brandName('fireflow')
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\Filament\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\Filament\Pages')
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
+            ->viteTheme('resources/css/filament/admin/theme.css')
             ->widgets([
                 AccountWidget::class,
                 ThemeToggle::class,
@@ -102,7 +106,7 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->plugins([
                 // ... other plugins
-                PushNotification::make(),
+            //    PushNotification::make(),
                 CommandRunnerPlugin::make()->canDeleteCommandHistory(fn ($user) => $user?->isAdmin() ?? false),
                 SlickScrollbarPlugin::make(),
                 FilamentSpatieLaravelBackupPlugin::make(),
@@ -121,7 +125,7 @@ class AdminPanelProvider extends PanelProvider
          ->plugins([
                 DatabaseQueryPlugin::make(),
                 TerminalConsolePlugin::make(),
-        //        DeepseekChatPanelPlugin::make(),
+                DeepseekChatPanelPlugin::make(),
             ])
             ->plugins([
                 QuickCreatePlugin::make()
@@ -131,7 +135,10 @@ class AdminPanelProvider extends PanelProvider
             ])
         //    ->plugin(\Filaforge\TerminalConsole\TerminalConsolePlugin::make())
         //     ->plugin(\Filaforge\DatabaseTools\DatabaseToolsPlugin::make())
-        //    ->plugin(\ShuvroRoy\FilamentSpatieLaravelBackup\FilamentSpatieLaravelBackupPlugin::make())
+            ->plugin(\ShuvroRoy\FilamentSpatieLaravelBackup\FilamentSpatieLaravelBackupPlugin::make())
+                   ->plugins([
+            FilamentAwinTheme::make(),
+                   ])
             ->plugins([
               WebhookPlugin::make()
                     ->icon('heroicon-o-bolt') // Set the icon for the plugin

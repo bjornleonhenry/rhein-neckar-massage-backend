@@ -18,7 +18,7 @@ class DatabaseQuery extends Page implements HasForms
 {
     use InteractsWithForms;
 
-    protected static ?string $navigationLabel = 'Database Query';
+    protected static ?string $navigationLabel = 'Database Querys';
 
     protected static ?string $title = 'Database Query';
 

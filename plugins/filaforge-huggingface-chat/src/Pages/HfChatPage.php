@@ -328,7 +328,7 @@ class HfChatPage extends Page implements HasForms, Tables\Contracts\HasTable
         if (method_exists($this, 'form')) {
             $this->form->fill($this->settingsData);
         }
-        $this->viewMode = 'settings';
+        $this->viewMode ='Settings';
     }
 
     public function showChat(): void

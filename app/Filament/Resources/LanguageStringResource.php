@@ -18,11 +18,11 @@ class LanguageStringResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = 'heroicon-o-language';
 
-//    protected static string | \UnitEnum | null $navigationGroup = 'Settings';
+   protected static string | \UnitEnum | null $navigationGroup = '';
 
     protected static ?string $navigationLabel = 'Languages';
 
-    protected static ?int $navigationSort = 1;
+    protected static ?int $navigationSort = 3;
 
     public static function form(Schema $schema): Schema
     {
@@ -56,10 +56,10 @@ class LanguageStringResource extends Resource
         return static::getModel()::query();
     }
 
-    public static function getNavigationBadge(): ?string
-    {
-        return static::getModel()::count();
-    }
+//   public static function getNavigationBadge(): ?string
+//   {
+//       return static::getModel()::count();
+//   }
 
     protected function mutateFormDataBeforeCreate(array $data): array
     {

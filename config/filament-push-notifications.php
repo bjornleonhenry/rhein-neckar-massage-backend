@@ -2,6 +2,11 @@
 
 return [
     /**
+     * Enable or disable push notifications
+     */
+    'enabled' => false,
+
+    /**
      * The model to use for the receivers.
      * This model should have the necessary fields to handle push notifications.
      */

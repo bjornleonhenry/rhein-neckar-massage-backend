@@ -165,6 +165,13 @@
       0 => 'Filament\\Notifications\\NotificationsServiceProvider',
     ),
   ),
+  'filament/query-builder' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Filament\\QueryBuilder\\QueryBuilderServiceProvider',
+    ),
+  ),
   'filament/schemas' => 
   array (
     'providers' => 
@@ -396,6 +403,16 @@
       0 => 'Resend\\Laravel\\ResendServiceProvider',
     ),
   ),
+  'resma/filament-awin-theme' => 
+  array (
+    'aliases' => 
+    array (
+      'FilamentAwinTheme' => 'Resma\\FilamentAwinTheme\\Facades\\FilamentAwinTheme',
+    ),
+    'providers' => 
+    array (
+    ),
+  ),
   'ryangjchandler/blade-capture-directive' => 
   array (
     'aliases' => 
@@ -426,13 +443,6 @@
     'providers' => 
     array (
       0 => 'ShuvroRoy\\FilamentSpatieLaravelHealth\\FilamentSpatieLaravelHealthServiceProvider',
-    ),
-  ),
-  'solution-forest/filament-tree' => 
-  array (
-    'providers' => 
-    array (
-      0 => 'SolutionForest\\FilamentTree\\FilamentTreeServiceProvider',
     ),
   ),
   'spatie/laravel-backup' => 
@@ -490,13 +500,6 @@
     'providers' => 
     array (
       0 => 'Swis\\Filament\\Backgrounds\\FilamentBackgroundsServiceProvider',
-    ),
-  ),
-  'xentixar/filament-push-notifications' => 
-  array (
-    'providers' => 
-    array (
-      0 => 'Xentixar\\FilamentPushNotifications\\PushNotificationsServiceProvider',
     ),
   ),
   'zpmlabs/filament-api-docs-builder' => 

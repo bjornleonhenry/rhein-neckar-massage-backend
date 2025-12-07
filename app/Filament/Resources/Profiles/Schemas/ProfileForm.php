@@ -8,7 +8,9 @@ use Filament\Schemas\Components\Section;
 use Filament\Forms\Components\TagsInput;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Schema;
+use Filament\Forms\Components\Checkbox;
 
 class ProfileForm
 {
@@ -28,11 +30,10 @@ class ProfileForm
                             ->numeric()
                             ->minValue(18)
                             ->maxValue(100),
-                        \Filament\Forms\Components\Toggle::make('active')
-                            ->label('Active')
-                            ->default(true)
-                            ->helperText('When disabled, this profile will not be displayed on the frontend'),
-                        // Legacy image field - hidden but kept for backward compatibility
+                 Checkbox::make('active')
+    ->label('Active')
+    ->default(true)
+    ->helperText('When disabled, this profile will not be displayed on the frontend') // Legacy image field - hidden but kept for backward compatibility
                         // FileUpload::make('image')
                         //     ->label('Main Image (Legacy)')
                         //     ->image()

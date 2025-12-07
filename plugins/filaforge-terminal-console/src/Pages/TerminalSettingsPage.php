@@ -63,7 +63,8 @@ class TerminalSettingsPage extends Page implements HasForms
 
     public static function shouldRegisterNavigation(): bool
     {
-        return config('terminal.enabled', true);
+         return false;
+        // return config('terminal.enabled', true);
     }
 
     public function getFormActions(): array
@@ -76,4 +77,6 @@ class TerminalSettingsPage extends Page implements HasForms
                 ->icon('heroicon-o-check'),
         ];
     }
+ 
 }
+
