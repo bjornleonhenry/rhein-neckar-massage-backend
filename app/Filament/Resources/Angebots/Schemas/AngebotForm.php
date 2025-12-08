@@ -7,6 +7,7 @@ use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\Toggle;
+use Filament\Forms\Components\Checkbox;
 use Filament\Schemas\Schema;
 
 class AngebotForm
@@ -54,7 +55,7 @@ class AngebotForm
                             ->numeric()
                             ->suffix('Min')
                             ->columnSpan(1),
-                        Toggle::make('is_active')
+                        Checkbox::make('is_active')
                             ->label('Active')
                             ->default(true)
                             ->columnSpan(1),
@@ -64,7 +65,7 @@ class AngebotForm
                     ->addActionLabel('Add Price Option')
                     ->collapsible()
                     ->columnSpanFull(),
-                Toggle::make('is_active')
+                Checkbox::make('is_active')
                     ->required()
                     ->default(true),
             ]);

@@ -9,6 +9,8 @@ use Filament\Actions\ViewAction;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Columns\Column;
+use Filament\Tables\Columns\ToggleColumn;
 use Filament\Tables\Table;
 
 class AngebotsTable
@@ -28,8 +30,9 @@ class AngebotsTable
                 TextColumn::make('category')
                     ->searchable(),
                 ImageColumn::make('image'),
-                IconColumn::make('is_active')
-                    ->boolean(),
+                ToggleColumn::make('is_active')
+                    ->label('Active')
+                    ->sortable(),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

@@ -19,28 +19,28 @@ class AngebotController extends Controller
         $perPage = $request->query('per_page', 15);
         $page = $request->query('page', 1);
         $category = $request->query('category');
-        $activeOnly = $request->boolean('active_only', true);
+        
+        // Default to showing only active angebots
+        $activeOnlyParam = $request->query('active_only');
+        $activeOnly = $activeOnlyParam === null ? true : filter_var($activeOnlyParam, FILTER_VALIDATE_BOOLEAN);
 
-        // Create cache key based on request parameters
-        $cacheKey = "angebots_page_{$page}_per_page_{$perPage}_category_{$category}_active_{$activeOnly}";
+        $query = Angebot::query()
+            ->with('options')
+            ->select(['id', 'title', 'description', 'price', 'duration_minutes', 'category', 'image', 'services', 'is_active', 'created_at', 'updated_at']);
 
-        $angebots = Cache::remember($cacheKey, 3600, function () use ($perPage, $page, $category, $activeOnly) {
-            $query = Angebot::query()
-                ->with('options')
-                ->select(['id', 'title', 'description', 'price', 'duration_minutes', 'category', 'image', 'services', 'is_active', 'created_at'])
-                ->orderBy('is_active', 'desc')
-                ->orderBy('created_at', 'desc');
+        if ($category) {
+            $query->where('category', $category);
+        }
 
-            if ($category) {
-                $query->where('category', $category);
-            }
+        // Filter by active status
+        if ($activeOnly) {
+            $query->where('is_active', 1);
+        }
 
-            if ($activeOnly) {
-                $query->where('is_active', true);
-            }
+        $query->orderBy('is_active', 'desc')
+              ->orderBy('created_at', 'desc');
 
-            return $query->paginate($perPage, ['*'], 'page', $page);
-        });
+        $angebots = $query->paginate($perPage, ['*'], 'page', $page);
 
         return response()->json([
             'data' => AngebotResource::collection($angebots->items()),
