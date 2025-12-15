@@ -24,11 +24,13 @@ return [
     'allowed_origins' => [
         env('FRONTEND_URL', 'http://localhost:5555'),
         'https://rhein-neckar-massage.de',
+        'https://rhein-neckar-massage.studio',
         'https://atelier-heidelberg.de',
-        'https://atelierheidelberg.de',  
+        'https://www.atelier-heidelberg.de',
+        'https://atelierheidelberg.de',
         'http://rhein-neckar-massage.de',
         'http://atelier-heidelberg.de',
-        'http://atelierheidelberg.de',  
+        'http://atelierheidelberg.de',
     ],
 
     'allowed_origins_patterns' => [],
