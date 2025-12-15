@@ -1,7 +1,7 @@
 
 	<img
 		src="{{ asset('logo.svg') }}"
-		alt="Fireflow logo"
+		alt="Bratwurst logo"
 		class="h-full w-auto brand-logo"
 		style="margin-left:4px;margin-right:10px;;"
 	>
